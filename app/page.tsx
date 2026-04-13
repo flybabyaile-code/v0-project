@@ -106,7 +106,6 @@ const translations = {
     },
     footer: {
       rights: "2026 KNIGHTS. All rights reserved.",
-      logoText: "KNIGHTS",
     },
     terminal: {
       init: "Initializing KNIGHTS Protocol...",
@@ -126,111 +125,6 @@ const translations = {
       tokenomics: "代币经济",
       community: "社区",
     },
-    hero: {
-      badge: "BSC Meme 价值模型",
-      title1: "正向飞轮",
-      title2: "社区代币",
-      desc: "骑士构建基于分红支撑、通缩模型与社区驱动增长引擎的自我强化经济系统。",
-      whitepaper: "阅读白皮书",
-      totalSupply: "总发行量",
-      tax: "交易税",
-      transparent: "链上透明",
-      learnMore: "了解更多",
-    },
-    about: {
-      badge: "项目概览",
-      title: "构建链上自我强化经济系统",
-      desc: "骑士不是短期情绪币，而是构建正向飞轮结构：交易 = 收益，持有 = 分红，流通 = 通缩。",
-      flywheel: "正向飞轮",
-      flywheelDesc: "持续自我强化系统",
-      fair: "公平透明",
-      fairDesc: "所有分配链上执行",
-    },
-    mechanism: {
-      badge: "核心机制",
-      title: "3% 交易税分配",
-      desc: "每笔交易收取 3% 税费，按以下结构分配",
-      dividends: {
-        title: "持有者分红",
-        features: [
-          "所有税收自动转换为 BNB 分红",
-          "持有 10 万+ 骑士参与",
-          "触发式自动分配",
-        ],
-      },
-      liquidity: {
-        title: "流动性增强",
-        features: [
-          "自动注入 LP 池（永久锁定）",
-          "自动增加交易深度",
-          "增强价格稳定性",
-        ],
-      },
-      burn: {
-        title: "通缩销毁",
-        features: [
-          "直接发送至黑洞地址",
-          "持续减少供应量",
-          "增强稀缺性",
-        ],
-      },
-    },
-    flywheel: {
-      badge: "正向飞轮",
-      title: "持续自我强化系统",
-      steps: [
-        "交易增加",
-        "手续费增长",
-        "分红增加 + LP 增强 + 通缩加速",
-        "吸引更多持有者",
-        "进一步增加交易量",
-      ],
-    },
-    tokenomics: {
-      badge: "代币经济学",
-      title: "10 亿总发行量",
-      desc: "基于 FOUR 平台公平发射，上线即可交易，100% 链上透明流通",
-      communityCore: "社区核心",
-      communitySeats: "100 席位 - 1 BNB/席位",
-      communityFeatures: ["社区建设", "内容传播", "KOL 拓展", "共识构建"],
-      retail: "散户参与",
-      retailSeats: "500 席位 - 0.1 BNB/席位",
-      retailFeatures: ["提供初始流动性", "构建交易深度", "扩大社区基础"],
-      fairTitle: "公平透明",
-      fairDesc: "所有分配链上执行，可验证可追溯",
-      freeTitle: "自由流通",
-      freeDesc: "上线即可交易，无锁仓机制",
-      consensusTitle: "共识驱动",
-      consensusDesc: "每位参与者：投资者 + LP + 节点",
-    },
-    community: {
-      badge: "加入社区",
-      title: "加入骑士社区",
-      desc: "交易 = 收益，持有 = 增长，通缩 = 升值",
-      twitter: "关注最新动态",
-      telegram: "加入社区讨论",
-      email: "商务合作",
-      whitepaper: "阅读文档",
-    },
-    cta: {
-      title: "准备好加入骑士了吗？",
-      desc: "在链上构建自我循环经济系统：交易 = 收益，持有 = 增长，通缩 = 升值",
-    },
-    footer: {
-      rights: "2026 骑士. 版权所有",
-      logoText: "骑士",
-    },
-    terminal: {
-      init: "初始化骑士协议...",
-      taxRate: "税率",
-      dividendPool: "分红池",
-      liquidityPool: "流动性池",
-      burnRate: "销毁率",
-      totalSupply: "总发行量",
-      minHold: "最低持有",
-      status: "状态",
-    },
-  },
     hero: {
       badge: "BSC Meme 价值模型",
       title1: "正向飞轮",
@@ -311,7 +205,7 @@ const translations = {
     community: {
       badge: "加入社区",
       title: "加入 KNIGHTS 社区",
-      desc: "交易 = ��益，持有 = 增长，通缩 = 升值",
+      desc: "交易 = 收益，持有 = 增长，通缩 = 升值",
       twitter: "关注最新动态",
       telegram: "加入社区讨论",
       email: "商务合作",
@@ -656,15 +550,8 @@ export default function KnightsLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo - clickable to scroll to top */}
-            <button onClick={scrollToTop} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Image
-                src="/images/knights-logo.png"
-                alt="Knights Logo"
-                width={48}
-                height={48}
-                className="object-contain"
-              />
-              <span className="text-xl font-bold text-primary drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">{t.footer.logoText}</span>
+            <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <span className="text-2xl font-bold text-primary drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">KNIGHTS</span>
             </button>
 
             {/* Desktop Nav */}
@@ -1026,17 +913,9 @@ export default function KnightsLanding() {
               <span className="text-primary text-xs font-semibold">{t.community.badge}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
-              {lang === "en" ? (
-                <>
-                  {t.community.title.split("KNIGHTS")[0]}
-                  <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">KNIGHTS</span>
-                  {t.community.title.split("KNIGHTS")[1]}
-                </>
-              ) : (
-                <>
-                  加入<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">骑士</span>社区
-                </>
-              )}
+              {t.community.title.split("KNIGHTS")[0]}
+              <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">KNIGHTS</span>
+              {t.community.title.split("KNIGHTS")[1]}
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
               {t.community.desc}
@@ -1095,15 +974,8 @@ export default function KnightsLanding() {
       <footer className="relative py-12 border-t border-primary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <button onClick={scrollToTop} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Image
-                src="/images/knights-logo.png"
-                alt="Knights Logo"
-                width={40}
-                height={40}
-                className="object-contain"
-              />
-              <span className="text-xl font-bold text-primary drop-shadow-[0_0_12px_rgba(255,215,0,0.6)]">{t.footer.logoText}</span>
+            <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <span className="text-xl font-bold text-primary drop-shadow-[0_0_12px_rgba(255,215,0,0.6)]">KNIGHTS</span>
             </button>
 
             <div className="flex items-center gap-6">
