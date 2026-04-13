@@ -233,7 +233,7 @@ const translations = {
 
 type Lang = "en" | "zh"
 
-// Optimized Animated Grid - lighter background, fewer effects
+// Optimized Animated Grid - cleaner, fewer particles
 function AnimatedGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -261,23 +261,23 @@ function AnimatedGrid() {
 
     const createParticles = () => {
       particles = []
-      const particleCount = Math.floor((canvas.width * canvas.height) / 20000)
+      const particleCount = Math.floor((canvas.width * canvas.height) / 35000)
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          size: Math.random() * 2 + 0.5,
-          opacity: Math.random() * 0.4 + 0.1,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          size: Math.random() * 1.5 + 0.5,
+          opacity: Math.random() * 0.5 + 0.2,
         })
       }
     }
 
     const drawGrid = () => {
-      ctx.strokeStyle = "rgba(212, 175, 55, 0.03)"
+      ctx.strokeStyle = "rgba(218, 165, 32, 0.06)"
       ctx.lineWidth = 1
-      const gridSize = 60
+      const gridSize = 80
 
       for (let x = 0; x < canvas.width; x += gridSize) {
         ctx.beginPath()
@@ -311,19 +311,18 @@ function AnimatedGrid() {
           0,
           particle.x,
           particle.y,
-          particle.size * 3
+          particle.size * 2
         )
-        gradient.addColorStop(0, `rgba(212, 175, 55, ${particle.opacity})`)
-        gradient.addColorStop(0.5, `rgba(255, 215, 0, ${particle.opacity * 0.4})`)
-        gradient.addColorStop(1, "rgba(212, 175, 55, 0)")
+        gradient.addColorStop(0, `rgba(255, 215, 0, ${particle.opacity})`)
+        gradient.addColorStop(1, "rgba(218, 165, 32, 0)")
         ctx.fillStyle = gradient
-        ctx.arc(particle.x, particle.y, particle.size * 3, 0, Math.PI * 2)
+        ctx.arc(particle.x, particle.y, particle.size * 2, 0, Math.PI * 2)
         ctx.fill()
       })
     }
 
     const connectParticles = () => {
-      const maxDistance = 150
+      const maxDistance = 120
       particles.forEach((a, i) => {
         particles.slice(i + 1).forEach((b) => {
           const dx = a.x - b.x
@@ -332,7 +331,7 @@ function AnimatedGrid() {
 
           if (distance < maxDistance) {
             ctx.beginPath()
-            ctx.strokeStyle = `rgba(212, 175, 55, ${0.08 * (1 - distance / maxDistance)})`
+            ctx.strokeStyle = `rgba(218, 165, 32, ${0.12 * (1 - distance / maxDistance)})`
             ctx.lineWidth = 0.5
             ctx.moveTo(a.x, a.y)
             ctx.lineTo(b.x, b.y)
@@ -368,11 +367,9 @@ function AnimatedGrid() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
       <canvas ref={canvasRef} className="absolute inset-0" />
-      {/* Subtle radial glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] animate-pulse" />
-      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-primary/4 rounded-full blur-[100px] animate-pulse [animation-delay:2s]" />
-      {/* Single subtle light beam */}
-      <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary/15 to-transparent animate-[moveDown_12s_ease-in-out_infinite]" />
+      {/* Subtle ambient glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/8 rounded-full blur-[150px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px]" />
     </div>
   )
 }
@@ -382,7 +379,7 @@ function LanguageSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) =>
   return (
     <button
       onClick={() => setLang(lang === "en" ? "zh" : "en")}
-      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium hover:bg-primary/20 transition-all group"
+      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/40 text-primary text-sm font-medium hover:bg-primary/25 transition-all group"
     >
       <Globe className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
       <span>{lang === "en" ? "中文" : "EN"}</span>
@@ -394,7 +391,7 @@ function LanguageSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) =>
 function GlowingBorder({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`relative group ${className}`}>
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-primary/50 to-primary/20 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-500" />
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/60 via-primary/30 to-primary/60 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
       <div className="relative">{children}</div>
     </div>
   )
@@ -431,13 +428,13 @@ function TerminalBlock({ lang }: { lang: Lang }) {
 
   return (
     <div className="relative">
-      <div className="absolute -inset-4 bg-primary/10 rounded-2xl blur-2xl" />
-      <div className="relative bg-secondary/90 backdrop-blur-xl rounded-lg border border-primary/20 overflow-hidden shadow-xl shadow-primary/10">
-        <div className="flex items-center gap-2 px-4 py-3 bg-muted/80 border-b border-primary/15">
-          <div className="w-3 h-3 rounded-full bg-red-500/70" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-          <div className="w-3 h-3 rounded-full bg-green-500/70" />
-          <span className="ml-2 text-xs text-primary/70 font-mono">knights-protocol.sh</span>
+      <div className="absolute -inset-3 bg-primary/15 rounded-2xl blur-xl" />
+      <div className="relative bg-card/95 backdrop-blur-xl rounded-xl border border-primary/30 overflow-hidden shadow-2xl shadow-primary/20">
+        <div className="flex items-center gap-2 px-4 py-3 bg-muted/60 border-b border-primary/20">
+          <div className="w-3 h-3 rounded-full bg-red-500/80" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <span className="ml-2 text-xs text-primary/80 font-mono">knights-protocol.sh</span>
         </div>
         <div className="p-5 font-mono text-sm space-y-1.5">
           {codeLines.slice(0, displayedLines).map((line, index) => (
@@ -466,13 +463,13 @@ function TerminalBlock({ lang }: { lang: Lang }) {
 function FlywheelDiagram() {
   return (
     <div className="relative w-full max-w-md mx-auto aspect-square">
-      <div className="absolute inset-0 bg-primary/8 rounded-full blur-[50px] animate-pulse" />
+      <div className="absolute inset-0 bg-primary/10 rounded-full blur-[60px] animate-pulse" />
       <svg viewBox="0 0 200 200" className="w-full h-full relative">
         <defs>
           <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgb(212, 175, 55)" stopOpacity="1" />
-            <stop offset="50%" stopColor="rgb(255, 215, 0)" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="rgb(180, 140, 40)" stopOpacity="0.6" />
+            <stop offset="0%" stopColor="rgb(255, 215, 0)" stopOpacity="1" />
+            <stop offset="50%" stopColor="rgb(218, 165, 32)" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="rgb(184, 134, 11)" stopOpacity="0.6" />
           </linearGradient>
           <filter id="glow">
             <feGaussianBlur stdDeviation="2" result="coloredBlur" />
@@ -487,29 +484,15 @@ function FlywheelDiagram() {
         <circle cx="100" cy="100" r="55" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" strokeDasharray="10 5" className="animate-[spin_20s_linear_infinite_reverse]" filter="url(#glow)" />
         <circle cx="100" cy="100" r="40" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeDasharray="6 4" className="animate-[spin_15s_linear_infinite]" />
         <circle cx="100" cy="100" r="25" fill="none" stroke="url(#goldGradient)" strokeWidth="0.8" className="animate-[spin_10s_linear_infinite_reverse]" />
-        <circle cx="100" cy="100" r="18" fill="rgba(212, 175, 55, 0.15)" className="animate-pulse" />
+        <circle cx="100" cy="100" r="18" fill="rgba(255, 215, 0, 0.2)" className="animate-pulse" />
       </svg>
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center">
-          <Zap className="w-8 h-8 text-primary mx-auto mb-2 drop-shadow-[0_0_10px_rgba(212,175,55,0.6)]" />
+          <Zap className="w-8 h-8 text-primary mx-auto mb-2 drop-shadow-[0_0_12px_rgba(255,215,0,0.8)]" />
           <span className="text-xs text-primary font-bold tracking-wider">FLYWHEEL</span>
         </div>
       </div>
     </div>
-  )
-}
-
-// Logo Component
-function Logo({ size = "default" }: { size?: "default" | "small" }) {
-  const sizeClass = size === "small" ? "w-8 h-8" : "w-10 h-10"
-  return (
-    <Image
-      src="/images/knights-logo.png"
-      alt="KNIGHTS Logo"
-      width={size === "small" ? 32 : 40}
-      height={size === "small" ? 32 : 40}
-      className={`${sizeClass} object-contain`}
-    />
   )
 }
 
@@ -550,14 +533,6 @@ export default function KnightsLanding() {
     <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
       {/* Global CSS for animations */}
       <style jsx global>{`
-        @keyframes moveDown {
-          0%, 100% { transform: translateY(-100%); }
-          50% { transform: translateY(100%); }
-        }
-        @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
-        }
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-15px); }
@@ -569,15 +544,14 @@ export default function KnightsLanding() {
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-background/90 backdrop-blur-xl border-b border-primary/15 shadow-lg shadow-primary/5" : "bg-transparent"
+          scrolled ? "bg-background/95 backdrop-blur-xl border-b border-primary/20 shadow-lg shadow-primary/10" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo - clickable to scroll to top */}
             <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <Logo />
-              <span className="text-xl font-bold text-primary drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]">KNIGHTS</span>
+              <span className="text-2xl font-bold text-primary drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">KNIGHTS</span>
             </button>
 
             {/* Desktop Nav */}
@@ -586,7 +560,7 @@ export default function KnightsLanding() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
+                  className="text-foreground/80 hover:text-primary transition-colors text-sm font-medium"
                 >
                   {link.label}
                 </a>
@@ -601,7 +575,7 @@ export default function KnightsLanding() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-all"
+                  className="text-foreground/70 hover:text-primary transition-all"
                 >
                   <link.icon className="w-5 h-5" />
                 </a>
@@ -623,13 +597,13 @@ export default function KnightsLanding() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-primary/15">
+          <div className="md:hidden bg-background/98 backdrop-blur-xl border-b border-primary/20">
             <div className="px-4 py-4 space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  className="block text-foreground/80 hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -642,7 +616,7 @@ export default function KnightsLanding() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-foreground/70 hover:text-primary transition-colors"
                   >
                     <link.icon className="w-5 h-5" />
                   </a>
@@ -653,29 +627,42 @@ export default function KnightsLanding() {
         )}
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section with Knight Background */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* Knight Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/knight-hero.jpg"
+            alt="Golden Knight"
+            fill
+            className="object-cover object-center opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="text-center space-y-8">
             {/* Floating badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/25 shadow-lg shadow-primary/10 animate-[float_6s_ease-in-out_infinite]">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 shadow-lg shadow-primary/20 animate-[float_6s_ease-in-out_infinite]">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-primary text-sm font-medium">{t.hero.badge}</span>
+              <span className="text-primary text-sm font-semibold">{t.hero.badge}</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight">
               <span className="text-foreground">{t.hero.title1}</span>
               <br />
-              <span className="text-primary drop-shadow-[0_0_30px_rgba(212,175,55,0.5)]">{t.hero.title2}</span>
+              <span className="text-primary drop-shadow-[0_0_40px_rgba(255,215,0,0.6)]">{t.hero.title2}</span>
             </h1>
 
-            <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground leading-relaxed">
+            <p className="max-w-2xl mx-auto text-lg sm:text-xl text-foreground/80 leading-relaxed">
               {t.hero.desc}
             </p>
 
             <div className="flex items-center justify-center pt-4">
               <a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 font-semibold px-8">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-6 text-lg shadow-xl shadow-primary/30">
                   <FileText className="w-5 h-5 mr-2" />
                   {t.hero.whitepaper}
                 </Button>
@@ -683,22 +670,22 @@ export default function KnightsLanding() {
             </div>
 
             {/* Stats */}
-            <div className="flex items-center justify-center gap-6 sm:gap-12 pt-8">
+            <div className="flex items-center justify-center gap-8 sm:gap-16 pt-10">
               {[
                 { value: "1B", label: t.hero.totalSupply },
                 { value: "3%", label: t.hero.tax },
                 { value: "100%", label: t.hero.transparent },
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary drop-shadow-[0_0_15px_rgba(212,175,55,0.5)] group-hover:drop-shadow-[0_0_20px_rgba(212,175,55,0.7)] transition-all">
+                  <div className="text-3xl sm:text-4xl font-bold text-primary drop-shadow-[0_0_20px_rgba(255,215,0,0.6)] group-hover:drop-shadow-[0_0_30px_rgba(255,215,0,0.8)] transition-all">
                     {stat.value}
                   </div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-sm text-foreground/70">{stat.label}</div>
                 </div>
               ))}
             </div>
 
-            <a href="#about" className="inline-flex flex-col items-center gap-2 pt-8 text-muted-foreground hover:text-primary transition-colors group">
+            <a href="#about" className="inline-flex flex-col items-center gap-2 pt-10 text-foreground/70 hover:text-primary transition-colors group">
               <span className="text-sm">{t.hero.learnMore}</span>
               <ChevronDown className="w-5 h-5 animate-bounce" />
             </a>
@@ -707,36 +694,36 @@ export default function KnightsLanding() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative py-20 sm:py-32">
+      <section id="about" className="relative py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-                <span className="text-primary text-xs font-medium">{t.about.badge}</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30">
+                <span className="text-primary text-xs font-semibold">{t.about.badge}</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
                 {t.about.title.split("Self-Reinforcing")[0]}
-                <span className="text-primary drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">
                   {lang === "en" ? "Self-Reinforcing" : "自我强化"}
                 </span>
                 {lang === "en" && " On-Chain Economic System"}
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-foreground/70 leading-relaxed text-lg">
                 {t.about.desc}
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 <GlowingBorder>
-                  <div className="p-4 rounded-lg bg-card border border-primary/10">
-                    <TrendingUp className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
-                    <h3 className="font-semibold mb-1">{t.about.flywheel}</h3>
-                    <p className="text-sm text-muted-foreground">{t.about.flywheelDesc}</p>
+                  <div className="p-5 rounded-xl bg-card border border-primary/20">
+                    <TrendingUp className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                    <h3 className="font-semibold mb-1 text-foreground">{t.about.flywheel}</h3>
+                    <p className="text-sm text-foreground/60">{t.about.flywheelDesc}</p>
                   </div>
                 </GlowingBorder>
                 <GlowingBorder>
-                  <div className="p-4 rounded-lg bg-card border border-primary/10">
-                    <Shield className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
-                    <h3 className="font-semibold mb-1">{t.about.fair}</h3>
-                    <p className="text-sm text-muted-foreground">{t.about.fairDesc}</p>
+                  <div className="p-5 rounded-xl bg-card border border-primary/20">
+                    <Shield className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                    <h3 className="font-semibold mb-1 text-foreground">{t.about.fair}</h3>
+                    <p className="text-sm text-foreground/60">{t.about.fairDesc}</p>
                   </div>
                 </GlowingBorder>
               </div>
@@ -749,17 +736,17 @@ export default function KnightsLanding() {
       </section>
 
       {/* Mechanism Section */}
-      <section id="mechanism" className="relative py-20 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-transparent pointer-events-none" />
+      <section id="mechanism" className="relative py-24 sm:py-32">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
-              <span className="text-primary text-xs font-medium">{t.mechanism.badge}</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
+              <span className="text-primary text-xs font-semibold">{t.mechanism.badge}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="text-primary drop-shadow-[0_0_20px_rgba(212,175,55,0.5)]">3%</span> {t.mechanism.title.replace("3% ", "")}
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+              <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">3%</span> {t.mechanism.title.replace("3% ", "")}
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
               {t.mechanism.desc}
             </p>
           </div>
@@ -786,13 +773,13 @@ export default function KnightsLanding() {
               },
             ].map((item, index) => (
               <GlowingBorder key={index}>
-                <div className="p-6 rounded-lg bg-card border border-primary/10 h-full">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 shadow-lg shadow-primary/20">
-                    <item.icon className="w-6 h-6 text-primary drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
+                <div className="p-6 rounded-xl bg-card border border-primary/20 h-full">
+                  <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center mb-4 shadow-lg shadow-primary/25">
+                    <item.icon className="w-7 h-7 text-primary drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
                   </div>
-                  <div className="text-4xl font-bold text-primary mb-2 drop-shadow-[0_0_15px_rgba(212,175,55,0.5)]">{item.percentage}</div>
-                  <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
+                  <div className="text-5xl font-bold text-primary mb-3 drop-shadow-[0_0_20px_rgba(255,215,0,0.6)]">{item.percentage}</div>
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">{item.title}</h3>
+                  <ul className="space-y-3 text-sm text-foreground/60">
                     {item.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-start gap-2">
                         <span className="text-primary mt-0.5">{">"}</span>
@@ -808,19 +795,19 @@ export default function KnightsLanding() {
       </section>
 
       {/* Flywheel Section */}
-      <section className="relative py-20 sm:py-32">
+      <section className="relative py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <FlywheelDiagram />
             </div>
             <div className="order-1 lg:order-2 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-                <span className="text-primary text-xs font-medium">{t.flywheel.badge}</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30">
+                <span className="text-primary text-xs font-semibold">{t.flywheel.badge}</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
                 {t.flywheel.title.split(lang === "en" ? "Self-Reinforcing" : "自我强化")[0]}
-                <span className="text-primary drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">
                   {lang === "en" ? "Self-Reinforcing" : "自我强化"}
                 </span>
                 {lang === "en" && " System"}
@@ -828,10 +815,10 @@ export default function KnightsLanding() {
               <div className="space-y-4">
                 {t.flywheel.steps.map((step, index) => (
                   <div key={index} className="flex items-center gap-4 group">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/25 flex items-center justify-center text-primary font-semibold text-sm shadow-lg shadow-primary/20 group-hover:shadow-primary/30 group-hover:bg-primary/15 transition-all">
+                    <div className="w-12 h-12 rounded-full bg-primary/15 border border-primary/35 flex items-center justify-center text-primary font-bold shadow-lg shadow-primary/25 group-hover:shadow-primary/40 group-hover:bg-primary/20 transition-all">
                       {index + 1}
                     </div>
-                    <span className="text-foreground">{step}</span>
+                    <span className="text-foreground text-lg">{step}</span>
                   </div>
                 ))}
               </div>
@@ -841,34 +828,34 @@ export default function KnightsLanding() {
       </section>
 
       {/* Tokenomics Section */}
-      <section id="tokenomics" className="relative py-20 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-transparent pointer-events-none" />
+      <section id="tokenomics" className="relative py-24 sm:py-32">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
-              <span className="text-primary text-xs font-medium">{t.tokenomics.badge}</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
+              <span className="text-primary text-xs font-semibold">{t.tokenomics.badge}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="text-primary drop-shadow-[0_0_20px_rgba(212,175,55,0.5)]">{lang === "en" ? "1 Billion" : "10 亿"}</span> {lang === "en" ? "Total Supply" : "总发行量"}
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+              <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">{lang === "en" ? "1 Billion" : "10 亿"}</span> {lang === "en" ? "Total Supply" : "总发行量"}
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
               {t.tokenomics.desc}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             <GlowingBorder>
-              <div className="p-6 rounded-lg bg-card border border-primary/10">
+              <div className="p-6 rounded-xl bg-card border border-primary/20">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shadow-lg shadow-primary/20">
-                    <Shield className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center shadow-lg shadow-primary/25">
+                    <Shield className="w-7 h-7 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold">{t.tokenomics.communityCore}</h3>
+                    <h3 className="text-xl font-semibold text-foreground">{t.tokenomics.communityCore}</h3>
                     <p className="text-primary font-mono">{t.tokenomics.communitySeats}</p>
                   </div>
                 </div>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="space-y-2 text-sm text-foreground/60">
                   {t.tokenomics.communityFeatures.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-primary">{">"}</span>
@@ -880,17 +867,17 @@ export default function KnightsLanding() {
             </GlowingBorder>
 
             <GlowingBorder>
-              <div className="p-6 rounded-lg bg-card border border-primary/10">
+              <div className="p-6 rounded-xl bg-card border border-primary/20">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shadow-lg shadow-primary/20">
-                    <Users className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center shadow-lg shadow-primary/25">
+                    <Users className="w-7 h-7 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold">{t.tokenomics.retail}</h3>
+                    <h3 className="text-xl font-semibold text-foreground">{t.tokenomics.retail}</h3>
                     <p className="text-primary font-mono">{t.tokenomics.retailSeats}</p>
                   </div>
                 </div>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="space-y-2 text-sm text-foreground/60">
                   {t.tokenomics.retailFeatures.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-primary">{">"}</span>
@@ -908,10 +895,10 @@ export default function KnightsLanding() {
               { icon: Zap, title: t.tokenomics.freeTitle, desc: t.tokenomics.freeDesc },
               { icon: Users, title: t.tokenomics.consensusTitle, desc: t.tokenomics.consensusDesc },
             ].map((item, index) => (
-              <div key={index} className="text-center p-6 rounded-lg bg-card/50 border border-primary/10 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10 transition-all">
-                <item.icon className="w-8 h-8 text-primary mx-auto mb-3 drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
-                <h3 className="font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              <div key={index} className="text-center p-6 rounded-xl bg-card/60 border border-primary/15 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/15 transition-all">
+                <item.icon className="w-10 h-10 text-primary mx-auto mb-4 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                <h3 className="font-semibold mb-2 text-foreground">{item.title}</h3>
+                <p className="text-sm text-foreground/60">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -919,18 +906,18 @@ export default function KnightsLanding() {
       </section>
 
       {/* Community Section */}
-      <section id="community" className="relative py-20 sm:py-32">
+      <section id="community" className="relative py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
-              <span className="text-primary text-xs font-medium">{t.community.badge}</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
+              <span className="text-primary text-xs font-semibold">{t.community.badge}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
               {t.community.title.split("KNIGHTS")[0]}
-              <span className="text-primary drop-shadow-[0_0_20px_rgba(212,175,55,0.5)]">KNIGHTS</span>
+              <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">KNIGHTS</span>
               {t.community.title.split("KNIGHTS")[1]}
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
               {t.community.desc}
             </p>
           </div>
@@ -950,10 +937,10 @@ export default function KnightsLanding() {
                 className="group"
               >
                 <GlowingBorder>
-                  <div className="p-6 rounded-lg bg-card border border-primary/10 text-center transition-all group-hover:scale-[1.02]">
-                    <item.icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
-                    <h3 className="font-semibold mb-1">{item.label}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <div className="p-6 rounded-xl bg-card border border-primary/20 text-center transition-all group-hover:scale-[1.02]">
+                    <item.icon className="w-10 h-10 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                    <h3 className="font-semibold mb-1 text-foreground">{item.label}</h3>
+                    <p className="text-sm text-foreground/60">{item.desc}</p>
                   </div>
                 </GlowingBorder>
               </a>
@@ -963,19 +950,19 @@ export default function KnightsLanding() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/8 via-transparent to-transparent pointer-events-none" />
+      <section className="relative py-24 sm:py-32">
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
             {t.cta.title.split("KNIGHTS")[0]}
-            <span className="text-primary drop-shadow-[0_0_25px_rgba(212,175,55,0.6)]">KNIGHTS</span>
+            <span className="text-primary drop-shadow-[0_0_30px_rgba(255,215,0,0.7)]">KNIGHTS</span>
             {t.cta.title.split("KNIGHTS")[1]}
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-foreground/70 mb-10 max-w-2xl mx-auto text-lg">
             {t.cta.desc}
           </p>
           <a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 font-semibold px-8">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-6 text-lg shadow-xl shadow-primary/30">
               <FileText className="w-5 h-5 mr-2" />
               {t.hero.whitepaper}
             </Button>
@@ -984,12 +971,11 @@ export default function KnightsLanding() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-12 border-t border-primary/15">
+      <footer className="relative py-12 border-t border-primary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <Logo size="small" />
-              <span className="text-lg font-bold text-primary drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]">KNIGHTS</span>
+              <span className="text-xl font-bold text-primary drop-shadow-[0_0_12px_rgba(255,215,0,0.6)]">KNIGHTS</span>
             </button>
 
             <div className="flex items-center gap-6">
@@ -999,14 +985,14 @@ export default function KnightsLanding() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] transition-all"
+                  className="text-foreground/60 hover:text-primary transition-colors"
                 >
                   <link.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
 
-            <p className="text-sm text-muted-foreground">
+            <p className="text-foreground/50 text-sm">
               {t.footer.rights}
             </p>
           </div>
