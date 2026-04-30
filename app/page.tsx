@@ -54,14 +54,6 @@ const translations = {
           "Enhanced price stability",
         ],
       },
-      burn: {
-        title: "Deflationary Burn",
-        features: [
-          "Direct send to black hole address",
-          "Continuous supply reduction",
-          "Enhanced scarcity",
-        ],
-      },
     },
     flywheel: {
       badge: "POSITIVE FLYWHEEL",
@@ -69,7 +61,7 @@ const translations = {
       steps: [
         "Transaction Increase",
         "Fee Growth",
-        "Dividend + LP Enhancement + Accelerated Deflation",
+        "Dividend + LP Enhancement",
         "Attract More Holders",
         "Further Increase Trading Volume",
       ],
@@ -106,6 +98,7 @@ const translations = {
     },
     footer: {
       rights: "2026 KNIGHTS. All rights reserved.",
+      logoText: "KNIGHTS",
     },
     terminal: {
       init: "Initializing KNIGHTS Protocol...",
@@ -153,7 +146,7 @@ const translations = {
         title: "持有者分红",
         features: [
           "所有税收自动转换为 BNB 分红",
-          "持有 10 万+ KNIGHTS 参与",
+          "持有 10 万+ 骑士参与",
           "触发式自动分配",
         ],
       },
@@ -165,14 +158,6 @@ const translations = {
           "增强价格稳定性",
         ],
       },
-      burn: {
-        title: "通缩销毁",
-        features: [
-          "直接发送至黑洞地址",
-          "持续减少供应量",
-          "增强稀缺性",
-        ],
-      },
     },
     flywheel: {
       badge: "正向飞轮",
@@ -180,7 +165,7 @@ const translations = {
       steps: [
         "交易增加",
         "手续费增长",
-        "分红增加 + LP 增强 + 通缩加速",
+        "分红增加 + LP 增强",
         "吸引更多持有者",
         "进一步增加交易量",
       ],
@@ -205,7 +190,7 @@ const translations = {
     community: {
       badge: "加入社区",
       title: "加入 KNIGHTS 社区",
-      desc: "交易 = 收益，持有 = 增长，通缩 = 升值",
+      desc: "交易 = ��益，持有 = 增长，通缩 = 升值",
       twitter: "关注最新动态",
       telegram: "加入社区讨论",
       email: "商务合作",
@@ -226,7 +211,7 @@ const translations = {
       burnRate: "销毁率",
       totalSupply: "总发行量",
       minHold: "最低持有",
-      status: "状态",
+      status: "状���",
     },
   },
 }
@@ -406,9 +391,8 @@ function TerminalBlock({ lang }: { lang: Lang }) {
     { text: "$ knights init --network bsc", type: "command" },
     { text: `> ${t.init}`, type: "info" },
     { text: `> ${t.taxRate}: 3%`, type: "info" },
-    { text: `> ${t.dividendPool}: 40%`, type: "info" },
-    { text: `> ${t.liquidityPool}: 40%`, type: "info" },
-    { text: `> ${t.burnRate}: 20%`, type: "info" },
+    { text: `> ${t.dividendPool}: 70%`, type: "info" },
+    { text: `> ${t.liquidityPool}: 30%`, type: "info" },
     { text: `> ${t.totalSupply}: 1,000,000,000 KNIGHTS`, type: "info" },
     { text: `> ${t.minHold}: 100,000 KNIGHTS`, type: "info" },
     { text: `> ${t.status}: ACTIVE`, type: "success" },
@@ -526,7 +510,7 @@ export default function KnightsLanding() {
     { href: "https://twitter.com/knights", icon: Twitter, label: "Twitter" },
     { href: "https://t.me/knights", icon: Send, label: "Telegram" },
     { href: "mailto:contact@knights.io", icon: Mail, label: "Email" },
-    { href: "https://www.gitbook.com/", icon: FileText, label: "Whitepaper" },
+    { href: "https://knightsweb.gitbook.io/knights-whitepaper/", icon: FileText, label: "Whitepaper" },
   ]
 
   return (
@@ -751,25 +735,19 @@ export default function KnightsLanding() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl">
             {[
               {
                 icon: Coins,
-                percentage: "40%",
+                percentage: "70%",
                 title: t.mechanism.dividends.title,
                 features: t.mechanism.dividends.features,
               },
               {
                 icon: TrendingUp,
-                percentage: "40%",
+                percentage: "30%",
                 title: t.mechanism.liquidity.title,
                 features: t.mechanism.liquidity.features,
-              },
-              {
-                icon: Flame,
-                percentage: "20%",
-                title: t.mechanism.burn.title,
-                features: t.mechanism.burn.features,
               },
             ].map((item, index) => (
               <GlowingBorder key={index}>
