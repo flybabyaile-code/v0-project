@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Menu, X, Twitter, Send, Mail, FileText, ChevronDown, Zap, Shield, TrendingUp, Flame, Users, Coins, Globe } from "lucide-react"
+import { Menu, X, Twitter, Send, Mail, FileText, ChevronDown, Zap, Shield, TrendingUp, Users, Coins, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -18,7 +18,7 @@ const translations = {
       badge: "BSC Meme Value Model",
       title1: "Positive Flywheel",
       title2: "Community Token",
-      desc: "KNIGHTS builds a self-reinforcing economic system based on dividend support, deflation model, and community-driven growth engine.",
+      desc: "KNIGHTS builds a self-reinforcing economic system based on dividend support, liquidity enhancement, and community-driven growth engine.",
       whitepaper: "Read Whitepaper",
       totalSupply: "Total Supply",
       tax: "Transaction Tax",
@@ -28,7 +28,7 @@ const translations = {
     about: {
       badge: "PROJECT OVERVIEW",
       title: "Building a Self-Reinforcing On-Chain Economic System",
-      desc: "KNIGHTS is not a short-term emotional coin, but builds a positive flywheel structure of: Trading = Income, Holding = Dividends, Circulation = Deflation.",
+      desc: "KNIGHTS is not a short-term emotional coin, but builds a positive flywheel structure: Trading = Income, Holding = Dividends, Circulation = Growth.",
       flywheel: "Positive Flywheel",
       flywheelDesc: "Sustained self-reinforcing system",
       fair: "Fair & Transparent",
@@ -70,23 +70,20 @@ const translations = {
       badge: "TOKENOMICS",
       title: "1 Billion Total Supply",
       desc: "Fair launch based on FOUR platform, trade immediately upon listing, 100% on-chain transparent circulation",
-      communityCore: "Community Core",
-      communitySeats: "100 Seats - 1 BNB/Seat",
+      communityCore: "Community Core Private Sale",
+      communitySeats: "0.5 BNB per share",
       communityFeatures: ["Community Building", "Content Dissemination", "KOL Expansion", "Consensus Building"],
-      retail: "Retail Participation",
-      retailSeats: "500 Seats - 0.1 BNB/Seat",
-      retailFeatures: ["Provide Initial Liquidity", "Build Trading Depth", "Expand Community Base"],
       fairTitle: "Fair & Transparent",
-      fairDesc: "All distributions executed on-chain",
+      fairDesc: "All distributions executed on-chain, verifiable and traceable",
       freeTitle: "Free Circulation",
-      freeDesc: "Trade upon listing, no lock-up",
+      freeDesc: "Trade upon listing, no lock-up mechanism",
       consensusTitle: "Consensus Driven",
       consensusDesc: "Every participant: Investor + LP + Node",
     },
     community: {
       badge: "JOIN COMMUNITY",
       title: "Join the KNIGHTS Community",
-      desc: "Trading = Income, Holding = Growth, Deflation = Appreciation",
+      desc: "Trading = Income, Holding = Dividends, Circulation = Growth",
       twitter: "Follow latest updates",
       telegram: "Join community chat",
       email: "Business inquiries",
@@ -94,7 +91,7 @@ const translations = {
     },
     cta: {
       title: "Ready to Join KNIGHTS?",
-      desc: "Build a self-circulating economic system on-chain where Trading = Income, Holding = Growth, Deflation = Appreciation",
+      desc: "Build a self-circulating economic system on-chain where Trading = Income, Holding = Dividends, Circulation = Growth",
     },
     footer: {
       rights: "2026 KNIGHTS. All rights reserved.",
@@ -122,7 +119,7 @@ const translations = {
       badge: "BSC Meme 价值模型",
       title1: "正向飞轮",
       title2: "社区代币",
-      desc: "KNIGHTS 构建基于分红支撑、通缩模型与社区驱动增长引擎的自我强化经济系统。",
+      desc: "骑士构建基于分红支撑、流动性增强与社区驱动增长引擎的自我强化经济系统。",
       whitepaper: "阅读白皮书",
       totalSupply: "总发行量",
       tax: "交易税",
@@ -132,7 +129,7 @@ const translations = {
     about: {
       badge: "项目概览",
       title: "构建链上自我强化经济系统",
-      desc: "KNIGHTS 不是短期情绪币，而是构建正向飞轮结构：交易 = 收益，持有 = 分红，流通 = 通缩。",
+      desc: "骑士不是短期情绪币，而是构建正向飞轮结构：交易 = 收益，持有 = 分红，流通 = 增值。",
       flywheel: "正向飞轮",
       flywheelDesc: "持续自我强化系统",
       fair: "公平透明",
@@ -174,12 +171,9 @@ const translations = {
       badge: "代币经济学",
       title: "10 亿总发行量",
       desc: "基于 FOUR 平台公平发射，上线即可交易，100% 链上透明流通",
-      communityCore: "社区核心",
-      communitySeats: "100 席位 - 1 BNB/席位",
+      communityCore: "社区核心私募",
+      communitySeats: "0.5 BNB / 份",
       communityFeatures: ["社区建设", "内容传播", "KOL 拓展", "共识构建"],
-      retail: "散户参与",
-      retailSeats: "500 席位 - 0.1 BNB/席位",
-      retailFeatures: ["提供初始流动性", "构建交易深度", "扩大社区基础"],
       fairTitle: "公平透明",
       fairDesc: "所有分配链上执行，可验证可追溯",
       freeTitle: "自由流通",
@@ -189,29 +183,29 @@ const translations = {
     },
     community: {
       badge: "加入社区",
-      title: "加入 KNIGHTS 社区",
-      desc: "交易 = ��益，持有 = 增长，通缩 = 升值",
+      title: "加入骑士社区",
+      desc: "交易 = 收益，持有 = 分红，流通 = 增值",
       twitter: "关注最新动态",
       telegram: "加入社区讨论",
       email: "商务合作",
       whitepaper: "阅读文档",
     },
     cta: {
-      title: "准备好加入 KNIGHTS 了吗？",
-      desc: "在链上构建自我循环经济系统：交易 = 收益，持有 = 增长，通缩 = 升值",
+      title: "准备好加入骑士了吗？",
+      desc: "在链上构建自我循环经济系统：交易 = 收益，持有 = 分红，流通 = 增值",
     },
     footer: {
-      rights: "2026 KNIGHTS. 版权所有",
+      rights: "2026 骑士. 版权所有",
+      logoText: "骑士",
     },
     terminal: {
-      init: "初始化 KNIGHTS 协议...",
+      init: "初始化骑士协议...",
       taxRate: "税率",
       dividendPool: "分红池",
       liquidityPool: "流动性池",
-      burnRate: "销毁率",
       totalSupply: "总发行量",
       minHold: "最低持有",
-      status: "状���",
+      status: "状态",
     },
   },
 }
@@ -507,9 +501,9 @@ export default function KnightsLanding() {
   ]
 
   const socialLinks = [
-    { href: "https://twitter.com/knights", icon: Twitter, label: "Twitter" },
-    { href: "https://t.me/knights", icon: Send, label: "Telegram" },
-    { href: "mailto:contact@knights.io", icon: Mail, label: "Email" },
+    { href: "https://x.com/knightsxau", icon: Twitter, label: "Twitter" },
+    { href: "https://t.me/knightsxau", icon: Send, label: "Telegram" },
+    { href: "mailto:flybabyaile@gmail.com", icon: Mail, label: "Email" },
     { href: "https://knightsweb.gitbook.io/knights-whitepaper/", icon: FileText, label: "Whitepaper" },
   ]
 
@@ -645,7 +639,7 @@ export default function KnightsLanding() {
             </p>
 
             <div className="flex items-center justify-center pt-4">
-              <a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://knightsweb.gitbook.io/knights-whitepaper/" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-6 text-lg shadow-xl shadow-primary/30">
                   <FileText className="w-5 h-5 mr-2" />
                   {t.hero.whitepaper}
@@ -735,7 +729,7 @@ export default function KnightsLanding() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {[
               {
                 icon: Coins,
@@ -821,48 +815,26 @@ export default function KnightsLanding() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="max-w-xl mx-auto">
             <GlowingBorder>
-              <div className="p-6 rounded-xl bg-card border border-primary/20">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center shadow-lg shadow-primary/25">
-                    <Shield className="w-7 h-7 text-primary" />
+              <div className="p-8 rounded-xl bg-card border border-primary/20">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-xl bg-primary/15 flex items-center justify-center shadow-lg shadow-primary/25">
+                    <Shield className="w-8 h-8 text-primary drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground">{t.tokenomics.communityCore}</h3>
-                    <p className="text-primary font-mono">{t.tokenomics.communitySeats}</p>
+                    <h3 className="text-2xl font-bold text-foreground">{t.tokenomics.communityCore}</h3>
+                    <p className="text-xl text-primary font-bold">{t.tokenomics.communitySeats}</p>
                   </div>
                 </div>
-                <ul className="space-y-2 text-sm text-foreground/60">
+                <div className="grid grid-cols-2 gap-4">
                   {t.tokenomics.communityFeatures.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-primary">{">"}</span>
-                      <span>{item}</span>
-                    </li>
+                    <div key={i} className="flex items-center gap-2 p-3 rounded-lg bg-primary/10 border border-primary/20">
+                      <span className="text-primary font-bold">{">"}</span>
+                      <span className="text-foreground/80">{item}</span>
+                    </div>
                   ))}
-                </ul>
-              </div>
-            </GlowingBorder>
-
-            <GlowingBorder>
-              <div className="p-6 rounded-xl bg-card border border-primary/20">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center shadow-lg shadow-primary/25">
-                    <Users className="w-7 h-7 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground">{t.tokenomics.retail}</h3>
-                    <p className="text-primary font-mono">{t.tokenomics.retailSeats}</p>
-                  </div>
                 </div>
-                <ul className="space-y-2 text-sm text-foreground/60">
-                  {t.tokenomics.retailFeatures.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-primary">{">"}</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </GlowingBorder>
           </div>
@@ -902,10 +874,10 @@ export default function KnightsLanding() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Twitter, label: "Twitter", href: "https://twitter.com/knights", desc: t.community.twitter },
-              { icon: Send, label: "Telegram", href: "https://t.me/knights", desc: t.community.telegram },
-              { icon: Mail, label: "Email", href: "mailto:contact@knights.io", desc: t.community.email },
-              { icon: FileText, label: "Whitepaper", href: "https://www.gitbook.com/", desc: t.community.whitepaper },
+              { icon: Twitter, label: "Twitter", href: "https://x.com/knightsxau", desc: t.community.twitter },
+              { icon: Send, label: "Telegram", href: "https://t.me/knightsxau", desc: t.community.telegram },
+              { icon: Mail, label: "Email", href: "mailto:flybabyaile@gmail.com", desc: t.community.email },
+              { icon: FileText, label: "Whitepaper", href: "https://knightsweb.gitbook.io/knights-whitepaper/", desc: t.community.whitepaper },
             ].map((item, index) => (
               <a
                 key={index}
@@ -939,7 +911,7 @@ export default function KnightsLanding() {
           <p className="text-foreground/70 mb-10 max-w-2xl mx-auto text-lg">
             {t.cta.desc}
           </p>
-          <a href="https://www.gitbook.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://knightsweb.gitbook.io/knights-whitepaper/" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-6 text-lg shadow-xl shadow-primary/30">
               <FileText className="w-5 h-5 mr-2" />
               {t.hero.whitepaper}
