@@ -354,14 +354,15 @@ function AnimatedGrid() {
 }
 
 // Language Switcher Component
-function LanguageSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
+function LanguageSwitcher({ lang, setLang, mounted }: { lang: Lang; setLang: (l: Lang) => void; mounted: boolean }) {
   return (
     <button
       onClick={() => setLang(lang === "en" ? "zh" : "en")}
       className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/40 text-primary text-sm font-medium hover:bg-primary/25 transition-all group"
+      suppressHydrationWarning
     >
       <Globe className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
-      <span>{lang === "en" ? "中文" : "EN"}</span>
+      <span suppressHydrationWarning>{mounted ? (lang === "en" ? "中文" : "EN") : "EN"}</span>
     </button>
   )
 }
@@ -478,8 +479,13 @@ export default function KnightsLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [lang, setLang] = useState<Lang>("en")
+  const [mounted, setMounted] = useState(false)
 
   const t = translations[lang]
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -508,7 +514,7 @@ export default function KnightsLanding() {
   ]
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden" suppressHydrationWarning>
       {/* Global CSS for animations */}
       <style jsx global>{`
         @keyframes float {
@@ -546,7 +552,7 @@ export default function KnightsLanding() {
             </div>
 
             <div className="hidden md:flex items-center gap-4">
-              <LanguageSwitcher lang={lang} setLang={setLang} />
+              <LanguageSwitcher lang={lang} setLang={setLang} mounted={mounted} />
               {socialLinks.slice(0, 3).map((link) => (
                 <a
                   key={link.label}
@@ -562,7 +568,7 @@ export default function KnightsLanding() {
 
             {/* Mobile Menu Button */}
             <div className="flex md:hidden items-center gap-3">
-              <LanguageSwitcher lang={lang} setLang={setLang} />
+              <LanguageSwitcher lang={lang} setLang={setLang} mounted={mounted} />
               <button
                 className="text-foreground"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -621,7 +627,7 @@ export default function KnightsLanding() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-          <div className="text-center space-y-8">
+          <div className="text-center space-y-8" suppressHydrationWarning>
             {/* Floating badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 shadow-lg shadow-primary/20 animate-[float_6s_ease-in-out_infinite]">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
@@ -679,12 +685,16 @@ export default function KnightsLanding() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30">
                 <span className="text-primary text-xs font-semibold">{t.about.badge}</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-                {t.about.title.split("Self-Reinforcing")[0]}
-                <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">
-                  {lang === "en" ? "Self-Reinforcing" : "自我强化"}
-                </span>
-                {lang === "en" && " On-Chain Economic System"}
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground" suppressHydrationWarning>
+                {lang === "en" ? (
+                  <>
+                    Building a <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> On-Chain Economic System
+                  </>
+                ) : (
+                  <>
+                    构建链上<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>经济系统
+                  </>
+                )}
               </h2>
               <p className="text-foreground/70 leading-relaxed text-lg">
                 {t.about.desc}
@@ -777,12 +787,16 @@ export default function KnightsLanding() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30">
                 <span className="text-primary text-xs font-semibold">{t.flywheel.badge}</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-                {t.flywheel.title.split(lang === "en" ? "Self-Reinforcing" : "自我强化")[0]}
-                <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">
-                  {lang === "en" ? "Self-Reinforcing" : "自我强化"}
-                </span>
-                {lang === "en" && " System"}
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground" suppressHydrationWarning>
+                {lang === "en" ? (
+                  <>
+                    Continuous <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> System
+                  </>
+                ) : (
+                  <>
+                    持续<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>系统
+                  </>
+                )}
               </h2>
               <div className="space-y-4">
                 {t.flywheel.steps.map((step, index) => (
@@ -807,8 +821,9 @@ export default function KnightsLanding() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
               <span className="text-primary text-xs font-semibold">{t.tokenomics.badge}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
-              <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">{lang === "en" ? "1 Billion" : "10 亿"}</span> {lang === "en" ? "Total Supply" : "总发行量"}
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground" suppressHydrationWarning>
+              <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">{lang === "en" ? "1 Billion" : "10 亿"}</span>{" "}
+              {lang === "en" ? "Total Supply" : "总发行量"}
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
               {t.tokenomics.desc}
@@ -862,10 +877,16 @@ export default function KnightsLanding() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
               <span className="text-primary text-xs font-semibold">{t.community.badge}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
-              {t.community.title.split("KNIGHTS")[0]}
-              <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">KNIGHTS</span>
-              {t.community.title.split("KNIGHTS")[1]}
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground" suppressHydrationWarning>
+              {lang === "en" ? (
+                <>
+                  Join the <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">KNIGHTS</span> Community
+                </>
+              ) : (
+                <>
+                  加入<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">骑士</span>社区
+                </>
+              )}
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
               {t.community.desc}
@@ -903,10 +924,16 @@ export default function KnightsLanding() {
       <section className="relative py-24 sm:py-32">
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
-            {t.cta.title.split("KNIGHTS")[0]}
-            <span className="text-primary drop-shadow-[0_0_30px_rgba(255,215,0,0.7)]">KNIGHTS</span>
-            {t.cta.title.split("KNIGHTS")[1]}
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground" suppressHydrationWarning>
+            {lang === "en" ? (
+              <>
+                Ready to Join <span className="text-primary drop-shadow-[0_0_30px_rgba(255,215,0,0.7)]">KNIGHTS</span>?
+              </>
+            ) : (
+              <>
+                准备好加入<span className="text-primary drop-shadow-[0_0_30px_rgba(255,215,0,0.7)]">骑士</span>了吗？
+              </>
+            )}
           </h2>
           <p className="text-foreground/70 mb-10 max-w-2xl mx-auto text-lg">
             {t.cta.desc}
