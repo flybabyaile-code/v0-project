@@ -1,0 +1,1 @@
+This branch contains the new features and enhancements for the bilingual KNIGHTS landing page, focusing on improved tokenomics UI. This commit squashes the previous changes for a cleaner commit history.
