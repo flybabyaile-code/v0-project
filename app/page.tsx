@@ -71,7 +71,7 @@ const translations = {
       title: "1 Billion Total Supply",
       desc: "Fair launch based on FOUR platform, trade immediately upon listing, 100% on-chain transparent circulation",
       communityCore: "Community Core Private Sale",
-      communitySeats: "0.5 BNB per share",
+      communitySeats: "0.5 BNB per share\nPrivate Sale Address: 0x9992175f22E6C19C36c933997749491564566A95",
       communityFeatures: ["Community Building", "Content Dissemination", "KOL Expansion", "Consensus Building"],
       fairTitle: "Fair & Transparent",
       fairDesc: "All distributions executed on-chain, verifiable and traceable",
@@ -172,7 +172,7 @@ const translations = {
       title: "10 亿总发行量",
       desc: "基于 FOUR 平台公平发射，上线即可交易，100% 链上透明流通",
       communityCore: "社区核心私募",
-      communitySeats: "0.5 BNB / 份",
+      communitySeats: "0.5 BNB / 份\n私募地址：0x9992175f22E6C19C36c933997749491564566A95",
       communityFeatures: ["社区建设", "内容传播", "KOL 拓展", "共识构建"],
       fairTitle: "公平透明",
       fairDesc: "所有分配链上执行，可验证可追溯",
@@ -507,10 +507,10 @@ export default function KnightsLanding() {
   ]
 
   const socialLinks = [
-    { href: "https://x.com/knightsxau", icon: Twitter, label: "Twitter" },
-    { href: "https://t.me/knightsxau", icon: Send, label: "Telegram" },
+    { href: "https://x.com/knightstoken", icon: Twitter, label: "Twitter" },
+    { href: "https://t.me/knightsfour", icon: Send, label: "Telegram" },
     { href: "mailto:flybabyaile@gmail.com", icon: Mail, label: "Email" },
-    { href: "https://knightsweb.gitbook.io/knights-whitepaper/", icon: FileText, label: "Whitepaper" },
+    { href: "https://knightsweb.gitbook.io/knights-whitepaper", icon: FileText, label: "Whitepaper" },
   ]
 
   return (
@@ -626,45 +626,45 @@ export default function KnightsLanding() {
           <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-          <div className="text-center space-y-8" suppressHydrationWarning>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 relative z-10">
+          <div className="text-center space-y-6 sm:space-y-8" suppressHydrationWarning>
             {/* Floating badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 shadow-lg shadow-primary/20 animate-[float_6s_ease-in-out_infinite]">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/20 border border-primary/40 shadow-lg shadow-primary/20 animate-[float_6s_ease-in-out_infinite]">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-primary text-sm font-semibold">{t.hero.badge}</span>
+              <span className="text-primary text-xs sm:text-sm font-semibold">{t.hero.badge}</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
               <span className="text-foreground">{t.hero.title1}</span>
               <br />
               <span className="text-primary drop-shadow-[0_0_40px_rgba(255,215,0,0.6)]">{t.hero.title2}</span>
             </h1>
 
-            <p className="max-w-2xl mx-auto text-lg sm:text-xl text-foreground/80 leading-relaxed">
+            <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed">
               {t.hero.desc}
             </p>
 
-            <div className="flex items-center justify-center pt-4">
-              <a href="https://knightsweb.gitbook.io/knights-whitepaper/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-6 text-lg shadow-xl shadow-primary/30">
-                  <FileText className="w-5 h-5 mr-2" />
+            <div className="flex items-center justify-center pt-2 sm:pt-4">
+              <a href="https://knightsweb.gitbook.io/knights-whitepaper" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-6 sm:px-10 py-4 sm:py-6 text-sm sm:text-lg shadow-xl shadow-primary/30">
+                  <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   {t.hero.whitepaper}
                 </Button>
               </a>
             </div>
 
             {/* Stats */}
-            <div className="flex items-center justify-center gap-8 sm:gap-16 pt-10">
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 md:gap-16 pt-8 sm:pt-10">
               {[
                 { value: "1B", label: t.hero.totalSupply },
                 { value: "3%", label: t.hero.tax },
                 { value: "100%", label: t.hero.transparent },
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="text-3xl sm:text-4xl font-bold text-primary drop-shadow-[0_0_20px_rgba(255,215,0,0.6)] group-hover:drop-shadow-[0_0_30px_rgba(255,215,0,0.8)] transition-all">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary drop-shadow-[0_0_20px_rgba(255,215,0,0.6)] group-hover:drop-shadow-[0_0_30px_rgba(255,215,0,0.8)] transition-all">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-foreground/70">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-foreground/70">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -678,58 +678,55 @@ export default function KnightsLanding() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative py-24 sm:py-32">
+      <section id="about" className="relative py-16 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30">
-                <span className="text-primary text-xs font-semibold">{t.about.badge}</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground" suppressHydrationWarning>
-                {lang === "en" ? (
-                  <>
-                    Building a <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> On-Chain Economic System
-                  </>
-                ) : (
-                  <>
-                    构建链上<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>经济系统
-                  </>
-                )}
-              </h2>
-              <p className="text-foreground/70 leading-relaxed text-lg">
-                {t.about.desc}
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <GlowingBorder>
-                  <div className="p-5 rounded-xl bg-card border border-primary/20">
-                    <TrendingUp className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                    <h3 className="font-semibold mb-1 text-foreground">{t.about.flywheel}</h3>
-                    <p className="text-sm text-foreground/60">{t.about.flywheelDesc}</p>
-                  </div>
-                </GlowingBorder>
-                <GlowingBorder>
-                  <div className="p-5 rounded-xl bg-card border border-primary/20">
-                    <Shield className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                    <h3 className="font-semibold mb-1 text-foreground">{t.about.fair}</h3>
-                    <p className="text-sm text-foreground/60">{t.about.fairDesc}</p>
-                  </div>
-                </GlowingBorder>
-              </div>
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
+              <span className="text-primary font-semibold text-xs sm:text-sm">{t.about.badge}</span>
             </div>
-            <div className="relative">
-              <TerminalBlock lang={lang} />
-            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground" suppressHydrationWarning>
+              {lang === "en" ? (
+                <>
+                  Building a <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> On-Chain Economic System
+                </>
+              ) : (
+                <>
+                  构建链上<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>经济系统
+                </>
+              )}
+            </h2>
+            <p className="text-foreground/70 leading-relaxed text-lg mt-4 max-w-3xl mx-auto">
+              {t.about.desc}
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
+            <GlowingBorder>
+              <div className="p-5 rounded-xl bg-card border border-primary/20">
+                <TrendingUp className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                <h3 className="font-semibold mb-1 text-foreground">{t.about.flywheel}</h3>
+                <p className="text-sm text-foreground/60">{t.about.flywheelDesc}</p>
+              </div>
+            </GlowingBorder>
+            <GlowingBorder>
+              <div className="p-5 rounded-xl bg-card border border-primary/20">
+                <Shield className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                <h3 className="font-semibold mb-1 text-foreground">{t.about.fair}</h3>
+                <p className="text-sm text-foreground/60">{t.about.fairDesc}</p>
+              </div>
+            </GlowingBorder>
+          </div>
+          <div className="relative max-w-3xl mx-auto">
+            <TerminalBlock lang={lang} />
           </div>
         </div>
       </section>
 
       {/* Mechanism Section */}
-      <section id="mechanism" className="relative py-24 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
+      <section id="mechanism" className="relative py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
-              <span className="text-primary text-xs font-semibold">{t.mechanism.badge}</span>
+              <span className="text-primary font-semibold text-xs sm:text-sm">{t.mechanism.badge}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
               <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">3%</span> {t.mechanism.title.replace("3% ", "")}
@@ -777,11 +774,11 @@ export default function KnightsLanding() {
       </section>
 
       {/* Flywheel Section */}
-      <section className="relative py-24 sm:py-32">
+      <section className="relative py-16 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <FlywheelDiagram />
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
+              <span className="text-primary font-semibold text-xs sm:text-sm">{t.flywheel.badge}</span>
             </div>
             <div className="order-1 lg:order-2 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30">
@@ -814,12 +811,11 @@ export default function KnightsLanding() {
       </section>
 
       {/* Tokenomics Section */}
-      <section id="tokenomics" className="relative py-24 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
+      <section id="tokenomics" className="relative py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
-              <span className="text-primary text-xs font-semibold">{t.tokenomics.badge}</span>
+              <span className="text-primary font-semibold text-xs sm:text-sm">{t.tokenomics.badge}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground" suppressHydrationWarning>
               <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">{lang === "en" ? "1 Billion" : "10 亿"}</span>{" "}
@@ -830,23 +826,28 @@ export default function KnightsLanding() {
             </p>
           </div>
 
-          <div className="max-w-xl mx-auto">
+          <div className="max-w-2xl mx-auto px-4 sm:px-0">
             <GlowingBorder>
-              <div className="p-8 rounded-xl bg-card border border-primary/20">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-xl bg-primary/15 flex items-center justify-center shadow-lg shadow-primary/25">
-                    <Shield className="w-8 h-8 text-primary drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+              <div className="p-6 sm:p-8 rounded-xl bg-card border border-primary/20">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-primary/15 flex items-center justify-center shadow-lg shadow-primary/25 flex-shrink-0">
+                    <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-primary drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground">{t.tokenomics.communityCore}</h3>
-                    <p className="text-xl text-primary font-bold">{t.tokenomics.communitySeats}</p>
+                  <div className="flex-1 w-full">
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground">{t.tokenomics.communityCore}</h3>
+                    <div className="text-base sm:text-lg text-primary font-bold whitespace-pre-line leading-relaxed">
+                      {t.tokenomics.communitySeats.split('\n')[0]}
+                    </div>
+                    <p className="text-xs sm:text-sm text-primary/80 mt-2 break-all">
+                      {t.tokenomics.communitySeats.split('\n')[1]}
+                    </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
                   {t.tokenomics.communityFeatures.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 p-3 rounded-lg bg-primary/10 border border-primary/20">
-                      <span className="text-primary font-bold">{">"}</span>
-                      <span className="text-foreground/80">{item}</span>
+                    <div key={i} className="flex items-center gap-2 p-2 sm:p-3 rounded-lg bg-primary/10 border border-primary/20">
+                      <span className="text-primary font-bold text-sm sm:text-base">{">"}</span>
+                      <span className="text-foreground/80 text-xs sm:text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -871,11 +872,11 @@ export default function KnightsLanding() {
       </section>
 
       {/* Community Section */}
-      <section id="community" className="relative py-24 sm:py-32">
+      <section id="community" className="relative py-16 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
-              <span className="text-primary text-xs font-semibold">{t.community.badge}</span>
+              <span className="text-primary font-semibold text-xs sm:text-sm">{t.community.badge}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground" suppressHydrationWarning>
               {lang === "en" ? (
@@ -895,10 +896,10 @@ export default function KnightsLanding() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Twitter, label: "Twitter", href: "https://x.com/knightsxau", desc: t.community.twitter },
-              { icon: Send, label: "Telegram", href: "https://t.me/knightsxau", desc: t.community.telegram },
+              { icon: Twitter, label: "Twitter", href: "https://x.com/knightstoken", desc: t.community.twitter },
+              { icon: Send, label: "Telegram", href: "https://t.me/knightsfour", desc: t.community.telegram },
               { icon: Mail, label: "Email", href: "mailto:flybabyaile@gmail.com", desc: t.community.email },
-              { icon: FileText, label: "Whitepaper", href: "https://knightsweb.gitbook.io/knights-whitepaper/", desc: t.community.whitepaper },
+              { icon: FileText, label: "Whitepaper", href: "https://knightsweb.gitbook.io/knights-whitepaper", desc: t.community.whitepaper },
             ].map((item, index) => (
               <a
                 key={index}
@@ -921,10 +922,10 @@ export default function KnightsLanding() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 sm:py-32">
+      <section className="relative py-16 sm:py-24 lg:py-32">
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground" suppressHydrationWarning>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground" suppressHydrationWarning>
             {lang === "en" ? (
               <>
                 Ready to Join <span className="text-primary drop-shadow-[0_0_30px_rgba(255,215,0,0.7)]">KNIGHTS</span>?
@@ -935,12 +936,12 @@ export default function KnightsLanding() {
               </>
             )}
           </h2>
-          <p className="text-foreground/70 mb-10 max-w-2xl mx-auto text-lg">
+          <p className="text-foreground/70 mb-8 sm:mb-10 max-w-2xl mx-auto text-base sm:text-lg">
             {t.cta.desc}
           </p>
-          <a href="https://knightsweb.gitbook.io/knights-whitepaper/" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-6 text-lg shadow-xl shadow-primary/30">
-              <FileText className="w-5 h-5 mr-2" />
+          <a href="https://knightsweb.gitbook.io/knights-whitepaper" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-6 sm:px-10 py-4 sm:py-6 text-sm sm:text-lg shadow-xl shadow-primary/30">
+              <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               {t.hero.whitepaper}
             </Button>
           </a>

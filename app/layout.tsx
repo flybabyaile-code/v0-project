@@ -8,25 +8,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'KNIGHTS - BSC Meme Value Model',
-  description: 'KNIGHTS is a blockchain token system built on dividend support, deflation model, and community-driven growth engine.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  description: 'KNIGHTS is a blockchain token system built on dividend support, liquidity enhancement, and community-driven growth engine.',
 }
 
 export default function RootLayout({
