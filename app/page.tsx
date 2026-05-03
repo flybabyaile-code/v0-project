@@ -71,7 +71,7 @@ const translations = {
       title: "1 Billion Total Supply",
       desc: "Fair launch based on FOUR platform, trade immediately upon listing, 100% on-chain transparent circulation",
       communityCore: "Community Core Private Sale",
-      communitySeats: "0.5 BNB per share",
+      communitySeats: "0.5 BNB per share\nPrivate Sale Address: 0x9992175f22E6C19C36c933997749491564566A95",
       communityFeatures: ["Community Building", "Content Dissemination", "KOL Expansion", "Consensus Building"],
       fairTitle: "Fair & Transparent",
       fairDesc: "All distributions executed on-chain, verifiable and traceable",
@@ -172,7 +172,7 @@ const translations = {
       title: "10 亿总发行量",
       desc: "基于 FOUR 平台公平发射，上线即可交易，100% 链上透明流通",
       communityCore: "社区核心私募",
-      communitySeats: "0.5 BNB / 份",
+      communitySeats: "0.5 BNB / 份\n私募地址：0x9992175f22E6C19C36c933997749491564566A95",
       communityFeatures: ["社区建设", "内容传播", "KOL 拓展", "共识构建"],
       fairTitle: "公平透明",
       fairDesc: "所有分配链上执行，可验证可追溯",
@@ -507,10 +507,10 @@ export default function KnightsLanding() {
   ]
 
   const socialLinks = [
-    { href: "https://x.com/knightsxau", icon: Twitter, label: "Twitter" },
-    { href: "https://t.me/knightsxau", icon: Send, label: "Telegram" },
+    { href: "https://x.com/knightstoken", icon: Twitter, label: "Twitter" },
+    { href: "https://t.me/knightsfour", icon: Send, label: "Telegram" },
     { href: "mailto:flybabyaile@gmail.com", icon: Mail, label: "Email" },
-    { href: "https://knightsweb.gitbook.io/knights-whitepaper/", icon: FileText, label: "Whitepaper" },
+    { href: "https://knightsweb.gitbook.io/knights-whitepaper", icon: FileText, label: "Whitepaper" },
   ]
 
   return (
@@ -645,7 +645,7 @@ export default function KnightsLanding() {
             </p>
 
             <div className="flex items-center justify-center pt-4">
-              <a href="https://knightsweb.gitbook.io/knights-whitepaper/" target="_blank" rel="noopener noreferrer">
+              <a href="https://knightsweb.gitbook.io/knights-whitepaper" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-6 text-lg shadow-xl shadow-primary/30">
                   <FileText className="w-5 h-5 mr-2" />
                   {t.hero.whitepaper}
@@ -839,7 +839,9 @@ export default function KnightsLanding() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-foreground">{t.tokenomics.communityCore}</h3>
-                    <p className="text-xl text-primary font-bold">{t.tokenomics.communitySeats}</p>
+                    <div className="text-lg text-primary font-bold whitespace-pre-line">
+                      {t.tokenomics.communitySeats}
+                    </div>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -895,10 +897,10 @@ export default function KnightsLanding() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Twitter, label: "Twitter", href: "https://x.com/knightsxau", desc: t.community.twitter },
-              { icon: Send, label: "Telegram", href: "https://t.me/knightsxau", desc: t.community.telegram },
+              { icon: Twitter, label: "Twitter", href: "https://x.com/knightstoken", desc: t.community.twitter },
+              { icon: Send, label: "Telegram", href: "https://t.me/knightsfour", desc: t.community.telegram },
               { icon: Mail, label: "Email", href: "mailto:flybabyaile@gmail.com", desc: t.community.email },
-              { icon: FileText, label: "Whitepaper", href: "https://knightsweb.gitbook.io/knights-whitepaper/", desc: t.community.whitepaper },
+              { icon: FileText, label: "Whitepaper", href: "https://knightsweb.gitbook.io/knights-whitepaper", desc: t.community.whitepaper },
             ].map((item, index) => (
               <a
                 key={index}
@@ -938,7 +940,7 @@ export default function KnightsLanding() {
           <p className="text-foreground/70 mb-10 max-w-2xl mx-auto text-lg">
             {t.cta.desc}
           </p>
-          <a href="https://knightsweb.gitbook.io/knights-whitepaper/" target="_blank" rel="noopener noreferrer">
+          <a href="https://knightsweb.gitbook.io/knights-whitepaper" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-6 text-lg shadow-xl shadow-primary/30">
               <FileText className="w-5 h-5 mr-2" />
               {t.hero.whitepaper}
