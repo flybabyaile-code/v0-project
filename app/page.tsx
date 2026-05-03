@@ -684,40 +684,39 @@ export default function KnightsLanding() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
               <span className="text-primary font-semibold text-xs sm:text-sm">{t.about.badge}</span>
             </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground" suppressHydrationWarning>
-                {lang === "en" ? (
-                  <>
-                    Building a <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> On-Chain Economic System
-                  </>
-                ) : (
-                  <>
-                    构建链上<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>经济系统
-                  </>
-                )}
-              </h2>
-              <p className="text-foreground/70 leading-relaxed text-lg">
-                {t.about.desc}
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <GlowingBorder>
-                  <div className="p-5 rounded-xl bg-card border border-primary/20">
-                    <TrendingUp className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                    <h3 className="font-semibold mb-1 text-foreground">{t.about.flywheel}</h3>
-                    <p className="text-sm text-foreground/60">{t.about.flywheelDesc}</p>
-                  </div>
-                </GlowingBorder>
-                <GlowingBorder>
-                  <div className="p-5 rounded-xl bg-card border border-primary/20">
-                    <Shield className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                    <h3 className="font-semibold mb-1 text-foreground">{t.about.fair}</h3>
-                    <p className="text-sm text-foreground/60">{t.about.fairDesc}</p>
-                  </div>
-                </GlowingBorder>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground" suppressHydrationWarning>
+              {lang === "en" ? (
+                <>
+                  Building a <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> On-Chain Economic System
+                </>
+              ) : (
+                <>
+                  构建链上<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>经济系统
+                </>
+              )}
+            </h2>
+            <p className="text-foreground/70 leading-relaxed text-lg mt-4 max-w-3xl mx-auto">
+              {t.about.desc}
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
+            <GlowingBorder>
+              <div className="p-5 rounded-xl bg-card border border-primary/20">
+                <TrendingUp className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                <h3 className="font-semibold mb-1 text-foreground">{t.about.flywheel}</h3>
+                <p className="text-sm text-foreground/60">{t.about.flywheelDesc}</p>
               </div>
-            </div>
-            <div className="relative">
-              <TerminalBlock lang={lang} />
-            </div>
+            </GlowingBorder>
+            <GlowingBorder>
+              <div className="p-5 rounded-xl bg-card border border-primary/20">
+                <Shield className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                <h3 className="font-semibold mb-1 text-foreground">{t.about.fair}</h3>
+                <p className="text-sm text-foreground/60">{t.about.fairDesc}</p>
+              </div>
+            </GlowingBorder>
+          </div>
+          <div className="relative max-w-3xl mx-auto">
+            <TerminalBlock lang={lang} />
           </div>
         </div>
       </section>
