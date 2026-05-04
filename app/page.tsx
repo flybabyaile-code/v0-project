@@ -130,7 +130,7 @@ const translations = {
       badge: "项目概览",
       title: "构建链上自我强化经济系统",
       desc: "骑士不是短期情绪币，而是构建正向飞轮结构：交易 = 收益，持有 = 分红，流通 = 增值。",
-      flywheel: "正向飞轮",
+      flywheel: ,
       flywheelDesc: "持续自我强化系统",
       fair: "公平透明",
       fairDesc: "所有分配链上执行",
