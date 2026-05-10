@@ -17,63 +17,63 @@ const translations = {
       whitepaper: "Whitepaper",
     },
     hero: {
-      badge: "BSC Quant Value Model",
-      title1: "Positive Flywheel",
-      title2: "Quant Token",
-      desc: "KNIGHTS connects quantitative capabilities with on-chain liquidity to build a self-reinforcing economic system with real yield support.",
+      badge: "AI Quantitative Asset Management Protocol",
+      title1: "On-Chain AI",
+      title2: "Asset Management",
+      desc: "KNIGHTS is an on-chain asset management protocol that integrates AI quantitative capabilities, on-chain liquidity, and automated economic models to deliver real-world trading returns.",
       whitepaper: "Read Whitepaper",
-      totalSupply: "Total Supply",
-      tax: "Transaction Tax",
-      transparent: "On-Chain Transparent",
+      totalSupply: "1 Billion",
+      tax: "3% Tax",
+      transparent: "100% Transparent",
       learnMore: "Learn More",
     },
     about: {
       badge: "PROJECT OVERVIEW",
-      title: "Building a Self-Reinforcing On-Chain Economic System",
-      desc: "KNIGHTS transforms traditional quantitative trading systems from closed fund management to open on-chain asset management structures.",
+      title: "From Trading Cost to Value Production",
+      desc: "KNIGHTS redefines transaction behavior as a 'system value production activity', transforming traditional fee mechanisms into a structured value distribution system that continuously strengthens the ecosystem.",
       flywheel: "Positive Flywheel",
-      flywheelDesc: "Sustained self-reinforcing system",
+      flywheelDesc: "Transaction → Fee → Redistribution → Enhancement",
       fair: "Fair & Transparent",
-      fairDesc: "All distributions on-chain",
-      quant: "Quant Strategy",
-      quantDesc: "10+ years gold trading",
-      network: "Global Network",
-      networkDesc: "2000+ global communities",
+      fairDesc: "No pre-mine, no lock-up, 100% circulation",
+      quant: "10+ Year Legacy",
+      quantDesc: "Stable quantitative system",
+      network: "Global Support",
+      networkDesc: "2000+ community members",
     },
     mechanism: {
-      badge: "CORE MECHANISM",
+      badge: "THREE-ELEMENT DISTRIBUTION MODEL",
       title: "3% Transaction Tax Allocation",
-      desc: "Every transaction collects 3% tax, allocated according to the following structure",
+      desc: "Every transaction collects 3% tax with automatic on-chain redistribution structure",
       dividends: {
-        title: "Holder Dividends",
+        title: "BNB Dividend Pool",
         percent: "70%",
         features: [
-          "All taxes auto-convert to BNB dividends",
-          "Hold 100,000+ KNIGHTS to participate",
-          "Real-time accumulation, auto distribution",
+          "Distributed to holders with ≥100,000 KNIGHTS",
+          "Chain-level real-time accumulation",
+          "Automatic settlement, zero friction",
         ],
       },
       liquidity: {
-        title: "Liquidity Enhancement",
+        title: "LP Permanent Lock",
         percent: "30%",
         features: [
-          "Auto-inject LP pool (permanent lock)",
-          "Eliminate rug pull risk",
-          "Enhanced price stability",
+          "Auto-converted to LP and burned",
+          "Continuous liquidity enhancement",
+          "Zero withdrawal risk",
         ],
       },
     },
     ai: {
-      badge: "AI QUANTITATIVE",
-      title: "Gold Quantitative System Empowerment",
-      desc: "External value support from a mature AI quantitative trading system that has been running stably for over 10 years",
+      badge: "AI QUANTITATIVE EMPOWERMENT",
+      title: "Gold Quantitative System & DApp Integration",
+      desc: "KNIGHTS DApp connects users to a mature AI gold quantitative trading system (XAU/USD) with 10+ years of stable operation. Users deposit KNIGHTS and receive USDT yield directly to their wallets.",
       features: [
-        { title: "10+ Years", desc: "Stable operation" },
-        { title: "2000+", desc: "Global communities" },
-        { title: "XAU/USD", desc: "Gold trading" },
-        { title: "≥1.5", desc: "Sharpe ratio target" },
+        { title: "10+ Years", desc: "Real trading history" },
+        { title: "2000+", desc: "Global participants" },
+        { title: "XAU/USD", desc: "Primary market" },
+        { title: "≥1.5", desc: "Sharpe ratio" },
       ],
-      integration: "AI system returns flow back to ecosystem treasury for KNIGHTS buyback or dividend pool enhancement",
+      integration: "Principal Protection: Withdraw at deposit price value. Dual Yield: USDT + BNB dividends. No lock-up period.",
     },
     flywheel: {
       badge: "POSITIVE FLYWHEEL",
@@ -90,15 +90,15 @@ const translations = {
     tokenomics: {
       badge: "TOKENOMICS",
       title: "1 Billion Total Supply",
-      desc: "Fair launch based on FOUR platform, 100% circulation, zero team allocation, zero lock-up",
-      communityCore: "Community Core Private Sale",
-      communitySeats: "0.5 BNB per share\nPrivate Sale Address: 0x9992175f22E6C19C36c933997749491564566A95",
-      communityFeatures: ["Community Building", "Content Dissemination", "KOL Expansion", "Consensus Building"],
+      desc: "Fair launch model with 100% circulation, zero team allocation, zero lock-up, and zero hidden release schedules",
+      communityCore: "Fair Issuance Principles",
+      communitySeats: "Equal market pricing for all participants",
+      communityFeatures: ["No pre-mine advantage", "No team control", "100% liquidity", "Market-driven pricing"],
       principles: [
-        { title: "No Pre-mine", desc: "Avoid early unfair distribution" },
-        { title: "No Lock-up", desc: "Eliminate future sell pressure expectations" },
-        { title: "No Linear Release", desc: "Avoid continuous supply impact" },
-        { title: "No Team Allocation", desc: "Eliminate centralized control risk" },
+        { title: "No Pre-mine", desc: "Fair starting point for all" },
+        { title: "No Lock-up", desc: "Eliminate future sell pressure" },
+        { title: "No Team Allocation", desc: "No hidden centralized control" },
+        { title: "100% Circulation", desc: "Full market pricing mechanism" },
       ],
     },
     community: {
@@ -142,63 +142,63 @@ const translations = {
       whitepaper: "白皮书",
     },
     hero: {
-      badge: "BSC 量化价值模型",
-      title1: "正向飞轮",
-      title2: "量化代币",
-      desc: "骑士将量化能力与链上流动性结合，构建具有真实收益支撑的自我强化经济系统。",
+      badge: "AI 量化资产管理协议",
+      title1: "链上 AI",
+      title2: "资产管理",
+      desc: "骑士是一个链上资产管理协议，整合 AI 量化能力、链上流动性和自动化经济模型，传递真实世界交易收益。",
       whitepaper: "阅读白皮书",
-      totalSupply: "总发行量",
-      tax: "交易税",
-      transparent: "链上透明",
+      totalSupply: "10 亿",
+      tax: "3% 税费",
+      transparent: "100% 透明",
       learnMore: "了解更多",
     },
     about: {
       badge: "项目概览",
-      title: "构建链上自我强化经济系统",
-      desc: "骑士将传统量化交易体系，从封闭式资金管理，升级为开放式链上资产管理结构。",
+      title: "从「交易成本」到「价值生产」",
+      desc: "骑士将交易行为重新定义为「系统价值生产活动」，将传统手续费机制转化为结构化价值分配系统，持续强化生态。",
       flywheel: "正向飞轮",
-      flywheelDesc: "持续自我强化系统",
+      flywheelDesc: "交易 → 手续费 → 结构化再分配 → 系统增强",
       fair: "公平透明",
-      fairDesc: "所有分配链上执行",
-      quant: "量化策略",
-      quantDesc: "10+ 年黄金交易",
-      network: "全球网络",
-      networkDesc: "2000+ 全球社区",
+      fairDesc: "无预挖、无锁仓、100% 全流通",
+      quant: "10+ 年历程",
+      quantDesc: "稳定量化系统",
+      network: "全球支持",
+      networkDesc: "2000+ 社区成员",
     },
     mechanism: {
-      badge: "核心机制",
+      badge: "三元分配模型",
       title: "3% 交易税分配",
-      desc: "每笔交易收取 3% 税费，按以下结构分配",
+      desc: "每笔交易收取 3% 税费，自动完成链上分配",
       dividends: {
-        title: "持有者分红",
+        title: "BNB 分红池",
         percent: "70%",
         features: [
-          "所有税收自动转换为 BNB 分红",
-          "持有 10 万+ 骑士参与",
-          "实时累积，自动到账",
+          "分配给存入 ≥10 万骑士的用户",
+          "链上实时累积",
+          "自动结算，秒级到账",
         ],
       },
       liquidity: {
-        title: "流动性增强",
+        title: "LP 永久锁定",
         percent: "30%",
         features: [
-          "自动注入 LP 池（永久锁定）",
-          "消除撤池风险",
-          "增强价格稳定性",
+          "自动兑换为 LP 并销毁",
+          "持续增强流动性",
+          "零撤池风险",
         ],
       },
     },
     ai: {
       badge: "AI 量化赋能",
-      title: "黄金量化系统赋能",
-      desc: "外部价值支撑来自一个已稳定运行超过 10 年的成熟 AI 量化交易系统",
+      title: "黄金量化系统与 DApp 集成",
+      desc: "骑士 DApp 连接用户与成熟的 AI 黄金量化交易系统（XAU/USD），10+ 年稳定运行历史。用户存入骑士，直接获得 USDT 收益。",
       features: [
-        { title: "10+ 年", desc: "稳定运行" },
-        { title: "2000+", desc: "全球社区" },
-        { title: "XAU/USD", desc: "黄金交易" },
-        { title: "≥1.5", desc: "夏普比率目标" },
+        { title: "10+ 年", desc: "真实交易历史" },
+        { title: "2000+", desc: "全球参与者" },
+        { title: "XAU/USD", desc: "主要市场" },
+        { title: "≥1.5", desc: "夏普比率" },
       ],
-      integration: "AI 量化收益归入生态金库，用于回购骑士或增强分红池",
+      integration: "本金保护：按存入价值提现。双重收益：USDT + BNB 分红。无锁仓时间。",
     },
     flywheel: {
       badge: "正向飞轮",
@@ -215,15 +215,15 @@ const translations = {
     tokenomics: {
       badge: "代币经济学",
       title: "10 亿总发行量",
-      desc: "基于 FOUR 平台公平发射，100% 全流通，零团队预留，零锁仓",
-      communityCore: "社区核心私募",
-      communitySeats: "0.5 BNB / 份\n私募地址：0x9992175f22E6C19C36c933997749491564566A95",
-      communityFeatures: ["社区建设", "内容传播", "KOL 拓展", "共识构建"],
+      desc: "公平发射模式，100% 全流通，零团队预留，零锁仓，零隐藏释放计划",
+      communityCore: "公平发行原则",
+      communitySeats: "所有参与者平等市场定价",
+      communityFeatures: ["无预挖优势", "无团队控制", "100% 流通", "市场定价机制"],
       principles: [
-        { title: "无预挖", desc: "避免早期不公平分配" },
+        { title: "无预挖", desc: "所有人公平起点" },
         { title: "无锁仓", desc: "消除未来抛压预期" },
-        { title: "无线性释放", desc: "避免供给持续冲击" },
         { title: "无团队预留", desc: "消除中心化控盘风险" },
+        { title: "100% 全流通", desc: "完整市场定价机制" },
       ],
     },
     community: {
@@ -379,7 +379,7 @@ KNIGHTS 由多家长期从事黄金量化交易（XAUUSD）的独立量化团队
       {
         title: "二、核心逻辑：从「交易成本」到「价值生产」",
         content: `基本公式：
-交易行为 → 手续费消耗 ��� 结构化再分配 → 系统增强 → 交易动机提升 → 交易频次增长
+交易行为 → 手续费消��� ��� 结构化再分配 → 系统增强 → 交易动机提升 → 交易频次增长
 
 关键转变对比：
 • 手续费属性：从交易成本变为价值来源
@@ -1183,33 +1183,15 @@ export default function KnightsLanding() {
             ))}
           </div>
 
-          <div className="max-w-2xl mx-auto px-4 sm:px-0">
-            <GlowingBorder>
-              <div className="p-6 sm:p-8 rounded-xl bg-card border border-primary/20">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-primary/15 flex items-center justify-center shadow-lg shadow-primary/25 flex-shrink-0">
-                    <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-primary drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                  </div>
-                  <div className="flex-1 w-full">
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground">{t.tokenomics.communityCore}</h3>
-                    <div className="text-base sm:text-lg text-primary font-bold">
-                      {t.tokenomics.communitySeats.split('\n')[0]}
-                    </div>
-                    <p className="text-xs sm:text-sm text-primary/80 mt-2 break-all">
-                      {t.tokenomics.communitySeats.split('\n')[1]}
-                    </p>
-                  </div>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {t.tokenomics.principles.map((principle, i) => (
+              <GlowingBorder key={i}>
+                <div className="p-5 rounded-xl bg-card border border-primary/20">
+                  <h3 className="font-bold text-foreground mb-2">{principle.title}</h3>
+                  <p className="text-sm text-foreground/70">{principle.desc}</p>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
-                  {t.tokenomics.communityFeatures.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 p-2 sm:p-3 rounded-lg bg-primary/10 border border-primary/20">
-                      <span className="text-primary font-bold text-sm sm:text-base">{">"}</span>
-                      <span className="text-foreground/80 text-xs sm:text-sm">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </GlowingBorder>
+              </GlowingBorder>
+            ))}
           </div>
         </div>
       </section>
