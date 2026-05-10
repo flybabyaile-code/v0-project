@@ -11,100 +11,116 @@ const translations = {
     nav: {
       about: "About",
       mechanism: "Mechanism",
-      ai: "AI Quant",
+      ai: "DApp & AI",
       tokenomics: "Tokenomics",
       community: "Community",
       whitepaper: "Whitepaper",
     },
     hero: {
-      badge: "AI Quantitative Asset Management Protocol",
+      badge: "On-Chain AI Asset Management Protocol",
       title1: "On-Chain AI",
       title2: "Asset Management",
-      desc: "KNIGHTS is an on-chain asset management protocol that integrates AI quantitative capabilities, on-chain liquidity, and automated economic models to deliver real-world trading returns.",
+      desc: "KNIGHTS integrates AI quantitative capabilities, on-chain liquidity, and automated economic models into an asset management protocol that delivers real-world trading returns.",
       whitepaper: "Read Whitepaper",
       totalSupply: "1 Billion",
       tax: "3% Tax",
-      transparent: "100% Transparent",
+      transparent: "100% Circulation",
       learnMore: "Learn More",
     },
     about: {
       badge: "PROJECT OVERVIEW",
       title: "From Trading Cost to Value Production",
-      desc: "KNIGHTS redefines transaction behavior as a 'system value production activity', transforming traditional fee mechanisms into a structured value distribution system that continuously strengthens the ecosystem.",
+      desc: "KNIGHTS redefines transaction behavior as 'system value production activity'. Fees are no longer consumption but value sources that continuously strengthen the ecosystem.",
       flywheel: "Positive Flywheel",
-      flywheelDesc: "Transaction → Fee → Redistribution → Enhancement",
+      flywheelDesc: "Transaction → Fee → Redistribution → System Enhancement",
       fair: "Fair & Transparent",
       fairDesc: "No pre-mine, no lock-up, 100% circulation",
       quant: "10+ Year Legacy",
-      quantDesc: "Stable quantitative system",
-      network: "Global Support",
-      networkDesc: "2000+ community members",
+      quantDesc: "Mature AI quantitative system",
+      network: "Global Network",
+      networkDesc: "2000+ community participants",
     },
     mechanism: {
       badge: "THREE-ELEMENT DISTRIBUTION MODEL",
       title: "3% Transaction Tax Allocation",
-      desc: "Every transaction collects 3% tax with automatic on-chain redistribution structure",
+      desc: "Every KNIGHTS transaction collects 3% fee with automatic on-chain redistribution",
       dividends: {
         title: "BNB Dividend Pool",
         percent: "70%",
         features: [
-          "Distributed to holders with ≥100,000 KNIGHTS",
-          "Chain-level real-time accumulation",
-          "Automatic settlement, zero friction",
+          "For users with ≥100,000 KNIGHTS deposited in DApp",
+          "Real-time on-chain accumulation",
+          "Instant settlement, no staking required",
         ],
       },
       liquidity: {
         title: "LP Permanent Lock",
         percent: "30%",
         features: [
-          "Auto-converted to LP and burned",
-          "Continuous liquidity enhancement",
-          "Zero withdrawal risk",
+          "Auto-converted to LP and sent to black hole",
+          "Eliminates rug pull risk",
+          "Continuously enhances market depth",
         ],
       },
     },
     ai: {
-      badge: "AI QUANTITATIVE EMPOWERMENT",
-      title: "Gold Quantitative System & DApp Integration",
-      desc: "KNIGHTS DApp connects users to a mature AI gold quantitative trading system (XAU/USD) with 10+ years of stable operation. Users deposit KNIGHTS and receive USDT yield directly to their wallets.",
+      badge: "DAPP & AI QUANTITATIVE POOL",
+      title: "Connect to AI Gold Quantitative System",
+      desc: "KNIGHTS DApp is the core entry point connecting users to the AI quantitative system. Deposit KNIGHTS to participate in AI-driven gold quantitative trading.",
       features: [
-        { title: "10+ Years", desc: "Real trading history" },
-        { title: "2000+", desc: "Global participants" },
-        { title: "XAU/USD", desc: "Primary market" },
-        { title: "≥1.5", desc: "Sharpe ratio" },
+        { title: "Principal Protected", desc: "Exit at deposit value" },
+        { title: "No Lock-up", desc: "Withdraw anytime" },
+        { title: "Dual Yield", desc: "USDT + BNB" },
+        { title: "AI Execution", desc: "Smart contract driven" },
       ],
-      integration: "Principal Protection: Withdraw at deposit price value. Dual Yield: USDT + BNB dividends. No lock-up period.",
+      integration: "Buy KNIGHTS → Enter DApp → Deposit to AI Pool → Daily USDT Yield → ≥100K gets BNB Dividends → Exit Anytime",
+      stats: [
+        { value: "10+", label: "Years Running" },
+        { value: "2000+", label: "Global Communities" },
+        { value: "≤15%", label: "Max Drawdown" },
+        { value: "≥1.5", label: "Sharpe Ratio" },
+      ],
     },
     flywheel: {
-      badge: "POSITIVE FLYWHEEL",
-      title: "Continuous Self-Reinforcing System",
+      badge: "FLYWHEEL MODEL",
+      title: "Self-Reinforcing Growth System",
       steps: [
-        "Transaction Increase",
-        "Fee Growth",
-        "Dividend + LP Enhancement",
-        "Attract More Holders",
-        "Further Increase Trading Volume",
+        "Trading Volume Growth",
+        "Fee Total Increase",
+        "BNB Dividends + LP Enhancement",
+        "User Yield Increase",
+        "More Users Deposit",
+        "TVL Growth",
+        "AI Quant Scale Expansion",
+        "USDT Yield Enhancement",
       ],
-      formula: "Quant × Liquidity × Network = Scalable Financial Infrastructure",
+      formula: "On-Chain Flywheel + Off-Chain Real Yield = Complete Value System",
     },
     tokenomics: {
-      badge: "TOKENOMICS",
+      badge: "FAIR LAUNCH",
       title: "1 Billion Total Supply",
-      desc: "Fair launch model with 100% circulation, zero team allocation, zero lock-up, and zero hidden release schedules",
-      communityCore: "Fair Issuance Principles",
-      communitySeats: "Equal market pricing for all participants",
-      communityFeatures: ["No pre-mine advantage", "No team control", "100% liquidity", "Market-driven pricing"],
+      desc: "100% circulation, zero team allocation, zero lock-up, zero hidden release schedules",
       principles: [
-        { title: "No Pre-mine", desc: "Fair starting point for all" },
+        { title: "No Pre-mine", desc: "Eliminate early unfair distribution" },
+        { title: "No Team Share", desc: "Avoid centralized control" },
         { title: "No Lock-up", desc: "Eliminate future sell pressure" },
-        { title: "No Team Allocation", desc: "No hidden centralized control" },
-        { title: "100% Circulation", desc: "Full market pricing mechanism" },
+        { title: "100% Circulation", desc: "Price fully market-determined" },
       ],
+    },
+    value: {
+      badge: "THREE-DIMENSIONAL VALUE SYSTEM",
+      title: "Triple Value Synergy",
+      dimensions: [
+        { title: "Yield Dimension", desc: "USDT + BNB dual cash flow", icon: "coins" },
+        { title: "Stability Dimension", desc: "LP permanent lock enhances depth", icon: "shield" },
+        { title: "Scarcity Dimension", desc: "Continuous supply contraction", icon: "trending" },
+      ],
+      formula: "Value = Yield Capability + Scarcity + Market Stability",
     },
     community: {
       badge: "JOIN COMMUNITY",
       title: "Join the KNIGHTS Community",
-      desc: "Trading = Income, Holding = Dividends, Circulation = Growth",
+      desc: "Deposit = Yield, Hold = Dividends, Trade = Value Production",
       twitter: "Follow latest updates",
       telegram: "Join community chat",
       email: "Business inquiries",
@@ -112,7 +128,7 @@ const translations = {
     },
     cta: {
       title: "Ready to Join KNIGHTS?",
-      desc: "Build a self-circulating economic system on-chain where Trading = Income, Holding = Dividends, Circulation = Growth",
+      desc: "An economic system with self-growth capability: AI quantitative yield + on-chain dividends + continuous liquidity enhancement",
     },
     footer: {
       rights: "2026 KNIGHTS. All rights reserved.",
@@ -124,11 +140,12 @@ const translations = {
       dividendPool: "Dividend Pool",
       liquidityPool: "Liquidity Pool",
       totalSupply: "Total Supply",
-      minHold: "Min Hold",
+      minHold: "Min Deposit",
       status: "Status",
     },
     whitepaper: {
       title: "KNIGHTS Whitepaper",
+      subtitle: "On-Chain AI Asset Management Protocol",
       close: "Close",
     },
   },
@@ -136,100 +153,116 @@ const translations = {
     nav: {
       about: "关于",
       mechanism: "机制",
-      ai: "AI量化",
+      ai: "DApp与AI",
       tokenomics: "代币经济",
       community: "社区",
       whitepaper: "白皮书",
     },
     hero: {
-      badge: "AI 量化资产管理协议",
+      badge: "链上 AI 资产管理协议",
       title1: "链上 AI",
       title2: "资产管理",
-      desc: "骑士是一个链上资产管理协议，整合 AI 量化能力、链上流动性和自动化经济模型，传递真实世界交易收益。",
+      desc: "骑士整合 AI 量化能力、链上流动性和自动化经济模型，构建传递真实世界交易收益的资产管理协议。",
       whitepaper: "阅读白皮书",
       totalSupply: "10 亿",
       tax: "3% 税费",
-      transparent: "100% 透明",
+      transparent: "100% 流通",
       learnMore: "了解更多",
     },
     about: {
       badge: "项目概览",
       title: "从「交易成本」到「价值生产」",
-      desc: "骑士将交易行为重新定义为「系统价值生产活动」，将传统手续费机制转化为结构化价值分配系统，持续强化生态。",
+      desc: "骑士将交易行为重新定义为「系统价值生产活动」。手续费不再是消耗，而是价值来源，持续强化生态系统。",
       flywheel: "正向飞轮",
       flywheelDesc: "交易 → 手续费 → 结构化再分配 → 系统增强",
       fair: "公平透明",
       fairDesc: "无预挖、无锁仓、100% 全流通",
       quant: "10+ 年历程",
-      quantDesc: "稳定量化系统",
-      network: "全球支持",
-      networkDesc: "2000+ 社区成员",
+      quantDesc: "成熟 AI 量化系统",
+      network: "全球网络",
+      networkDesc: "2000+ 社区参与者",
     },
     mechanism: {
       badge: "三元分配模型",
       title: "3% 交易税分配",
-      desc: "每笔交易收取 3% 税费，自动完成链上分配",
+      desc: "每笔骑士交易收取 3% 手续费，自动完成链上分配",
       dividends: {
         title: "BNB 分红池",
         percent: "70%",
         features: [
-          "分配给存入 ≥10 万骑士的用户",
+          "分配给存入 DApp ≥10 万骑士的用户",
           "链上实时累积",
-          "自动结算，秒级到账",
+          "自动结算，无需质押",
         ],
       },
       liquidity: {
         title: "LP 永久锁定",
         percent: "30%",
         features: [
-          "自动兑换为 LP 并销毁",
-          "持续增强流动性",
-          "零撤池风险",
+          "自动兑换 LP 发送至黑洞地址",
+          "消除撤池风险",
+          "持续增强市场深度",
         ],
       },
     },
     ai: {
-      badge: "AI 量化赋能",
-      title: "黄金量化系统与 DApp 集成",
-      desc: "骑士 DApp 连接用户与成熟的 AI 黄金量化交易系统（XAU/USD），10+ 年稳定运行历史。用户存入骑士，直接获得 USDT 收益。",
+      badge: "DAPP 与 AI 智能量化池",
+      title: "连接 AI 黄金量化系统",
+      desc: "骑士 DApp 是连接用户与 AI 量化系统的核心入口。存入骑士即可参与 AI 驱动的黄金量化交易。",
       features: [
-        { title: "10+ 年", desc: "真实交易历史" },
-        { title: "2000+", desc: "全球参与者" },
-        { title: "XAU/USD", desc: "主要市场" },
-        { title: "≥1.5", desc: "夏普比率" },
+        { title: "本金保护", desc: "按存入价值退出" },
+        { title: "无锁仓", desc: "随时可退出" },
+        { title: "双重收益", desc: "USDT + BNB" },
+        { title: "AI 执行", desc: "智能合约运行" },
       ],
-      integration: "本金保护：按存入价值提现。双重收益：USDT + BNB 分红。无锁仓时间。",
+      integration: "购买骑士 → 进入 DApp → 存入 AI 量化池 → 每日 USDT 收益 → ≥10万获 BNB 分红 → 随时退出",
+      stats: [
+        { value: "10+", label: "年运行历史" },
+        { value: "2000+", label: "全球社区" },
+        { value: "≤15%", label: "最大回撤" },
+        { value: "≥1.5", label: "夏普比率" },
+      ],
     },
     flywheel: {
-      badge: "正向飞轮",
-      title: "持续自我强化系统",
+      badge: "飞轮模型",
+      title: "自我强化增长系统",
       steps: [
-        "交易增加",
-        "手续费增长",
-        "分红增加 + LP 增强",
-        "吸引更多持有者",
-        "进一步增加交易量",
+        "交易量增长",
+        "手续费增加",
+        "BNB 分红 + LP 增强",
+        "用户收益提升",
+        "更多用户存入",
+        "TVL 增长",
+        "AI 量化规模扩大",
+        "USDT 收益增强",
       ],
-      formula: "量化 × 流动性 × 网络 = 可扩展金融基础设施",
+      formula: "链上飞轮 + 链下真实收益 = 完整价值体系",
     },
     tokenomics: {
-      badge: "代币经济学",
+      badge: "公平发射",
       title: "10 亿总发行量",
-      desc: "公平发射模式，100% 全流通，零团队预留，零锁仓，零隐藏释放计划",
-      communityCore: "公平发行原则",
-      communitySeats: "所有参与者平等市场定价",
-      communityFeatures: ["无预挖优势", "无团队控制", "100% 流通", "市场定价机制"],
+      desc: "100% 全流通，零团队预留，零锁仓，零隐藏释放计划",
       principles: [
-        { title: "无预挖", desc: "所有人公平起点" },
+        { title: "无预挖", desc: "消除早期不公平分配" },
+        { title: "无团队份额", desc: "避免中心化控盘" },
         { title: "无锁仓", desc: "消除未来抛压预期" },
-        { title: "无团队预留", desc: "消除中心化控盘风险" },
-        { title: "100% 全流通", desc: "完整市场定价机制" },
+        { title: "100% 流通", desc: "价格完全由市场决定" },
       ],
+    },
+    value: {
+      badge: "三维价值体系",
+      title: "三重价值协同",
+      dimensions: [
+        { title: "收益维度", desc: "USDT + BNB 双重现金流", icon: "coins" },
+        { title: "稳定维度", desc: "LP 永久锁定增强深度", icon: "shield" },
+        { title: "稀缺维度", desc: "持续供应收缩", icon: "trending" },
+      ],
+      formula: "价值 = 收益能力 + 稀缺性 + 市场稳定性",
     },
     community: {
       badge: "加入社区",
       title: "加入骑士社区",
-      desc: "交易 = 收益，持有 = 分红，流通 = 增值",
+      desc: "存入 = 收益，持有 = 分红，交易 = 价值生产",
       twitter: "关注最新动态",
       telegram: "加入社区讨论",
       email: "商务合作",
@@ -237,7 +270,7 @@ const translations = {
     },
     cta: {
       title: "准备好加入骑士了吗？",
-      desc: "在链上构建自我循环经济系统：交易 = 收益，持有 = 分红，流通 = 增值",
+      desc: "具备自我增长能力的经济系统：AI 量化收益 + 链上分红 + 流动性持续增强",
     },
     footer: {
       rights: "2026 骑士. 版权所有",
@@ -249,11 +282,12 @@ const translations = {
       dividendPool: "分红池",
       liquidityPool: "流动性池",
       totalSupply: "总发行量",
-      minHold: "最低持有",
+      minHold: "最低存入",
       status: "状态",
     },
     whitepaper: {
       title: "骑士白皮书",
+      subtitle: "链上 AI 资产管理协议",
       close: "关闭",
     },
   },
@@ -264,210 +298,521 @@ const whitepaperContent = {
   en: {
     sections: [
       {
+        title: "Introduction",
+        content: `In the past crypto market, most tokens relied on sentiment, traffic, and short-term speculation.
+Price increases depended on new buying pressure, value maintenance relied on market heat, and once liquidity weakened, the system quickly lost growth momentum.
+
+Meanwhile, although the traditional quantitative trading industry has mature and stable profitability, it has long been closed within institutional systems:
+• Ordinary users cannot participate
+• Revenue models lack transparency
+• Low capital efficiency
+• Lack of on-chain liquidity structure
+• Unable to form open network growth
+
+KNIGHTS was born to bridge the gap between "real-world quantitative returns" and "on-chain growth structures".`
+      },
+      {
         title: "1. Project Overview",
-        content: `In the current crypto market, most tokens rely on market sentiment and short-term liquidity, lacking stable value support and sustainable growth mechanisms. Meanwhile, traditional quantitative trading has mature strategies but is limited by fund structure and trust mechanisms.
+        content: `1.1 Industry Background
+Most tokens in the current crypto market rely on market sentiment and short-term liquidity, lacking stable value support. Meanwhile, traditional quantitative trading has mature profit models but faces:
+• High dependence on institutional funding
+• High user entry barriers
+• Opaque revenue structures
+• Insufficient capital efficiency and liquidity
+• Lack of on-chain verifiable mechanisms
 
-KNIGHTS proposes: Combining quantitative capabilities with trading behavior through on-chain structures to build an economic system with intrinsic growth capability.
+1.2 KNIGHTS Positioning
+KNIGHTS is an on-chain asset management protocol combining:
+"AI Quantitative Capabilities + On-Chain Liquidity + Automated Economic Models"
 
-KNIGHTS is jointly initiated by multiple independent quantitative teams with long-term experience in gold (XAUUSD) quantitative trading, distributed across Asian quantitative trading centers (Hong Kong/Singapore), offshore liquidity markets (Dubai), and crypto derivatives active regions (Southeast Asia).`
+Through smart contracts and DApp systems, KNIGHTS integrates:
+• AI gold quantitative returns
+• On-chain trading behavior
+• Liquidity growth
+• User incentive mechanisms
+Into an economic system with self-growth capability.
+
+1.3 Founding Team
+KNIGHTS is jointly initiated by multiple independent quantitative teams with long-term experience in gold quantitative trading (XAU/USD), with core members distributed in:
+• Hong Kong
+• Singapore
+• Dubai
+• Southeast Asia`
       },
       {
-        title: "2. Core Logic: From 'Transaction Cost' to 'Value Production'",
-        content: `Basic Formula:
-Trading Behavior → Fee Consumption → Structured Redistribution → System Enhancement → Trading Motivation Increase → Trading Frequency Growth
+        title: "2. Core Logic: From Trading Cost to Value Production",
+        content: `In traditional token models, transaction fees typically mean value loss.
+KNIGHTS redefines trading behavior as: "System Value Production Behavior"
 
-Key Transformations:
-• Fee attribute: From transaction cost to value source
-• Impact on system: From value consumption to value production
-• Holder status: From passive waiting to active dividend receiving
-• Liquidity source: From external market makers to automatic internal growth
-• Supply model: From fixed/inflation to continuous deflation`
+Core Logic Flow:
+Trading Behavior → Fee Generation → Structured Redistribution → System Enhancement → User Yield Increase → Trading Demand Increase → Trading Activity Continuous Growth
+
+Model Comparison:
+| Dimension | Traditional Model | KNIGHTS Model |
+| Fee Attribute | Transaction Cost | Value Source |
+| User Role | Passive Waiting | Active Participation |
+| Liquidity Source | External Market Making | System Auto-Enhancement |
+| Growth Model | Depends on Market Sentiment | Depends on Internal Flywheel |
+| Supply Structure | Inflation or Fixed | Continuous Deflation |`
       },
       {
-        title: "3. Core Mechanism: 3% Transaction Tax Allocation",
-        content: `Every KNIGHTS transaction collects 3% fee, allocated as follows:
+        title: "3. Core Mechanism: 3% Tax Three-Element Distribution",
+        content: `Every KNIGHTS transaction collects 3% fee, automatically distributed on-chain.
 
-70% Holder Dividends:
-• Participation threshold: ≥100,000 KNIGHTS
-• Dividend currency: BNB (auto-distributed on-chain)
-• Settlement: Real-time accumulation, auto arrival
-• No staking required, holding is participating
+Distribution Structure:
+| Direction | Ratio | Function |
+| BNB Dividend Pool | 70% | Distributed to users with ≥100,000 KNIGHTS deposited |
+| LP Liquidity Enhancement | 30% | Auto-enhances market depth and permanently locks |
 
-30% Liquidity Enhancement (Permanent Lock):
-• Each transaction → 30% tax auto-converts to LP tokens → Sent to black hole address for permanent lock
+3.1 BNB Dividend Mechanism (70%)
+Only open to users who "deposit in DApp AI Quantitative Pool with ≥100,000 KNIGHTS"
+• Dividend Currency: BNB
+• On-chain real-time accumulation
+• Automatic settlement
+• Instant arrival
+• No staking required
+• Deposit to participate
+
+3.2 LP Permanent Lock Mechanism (30%)
+30% tax from each transaction:
+Auto-convert to LP → Permanently sent to black hole address
+
+Effects:
 • Eliminates rug pull risk
-• Reduces large sell-off impact on price
-• Liquidity/market cap ratio continues to rise`
+• Enhances market depth
+• Reduces price volatility
+• Improves capital stability
+• Strengthens long-term value support`
       },
       {
-        title: "4. Flywheel Model: Self-Reinforcing Dynamic System",
-        content: `Complete Flywheel Path:
-Transaction Volume Increase → Fee Total Increase → Dividend Pool Expansion + Liquidity Deepening → Holder APY Increase + Market Depth Increase + Scarcity Enhancement → Holding Motivation Enhancement + New Capital Entry → Holder Address Growth → Trading Activity Further Increase → (Return to Start)
+        title: "4. DApp & AI Quantitative Pool",
+        content: `4.1 Product Positioning
+KNIGHTS DApp is the core entry connecting users to the AI quantitative system.
+Users deposit KNIGHTS through DApp to participate in AI-driven gold quantitative trading.
+
+4.2 Core Features:
+| Feature | Description |
+| Principal Protection | Exit at deposit value |
+| No Lock-up | Exit anytime |
+| Instant Yield | On-chain auto settlement |
+| Dual Yield | USDT + BNB |
+| AI Execution | Full smart contract operation |
+
+4.3 Participation Process:
+Buy KNIGHTS → Enter KNIGHTS DApp → Deposit to AI Quantitative Pool → System participates in quant trading at deposit value → Daily USDT yield → ≥100K deposit gets BNB dividends → Exit anytime, principal returned at deposit value
+
+4.4 Principal Protection Mechanism
+KNIGHTS uses "Exit at Deposit Value" mechanism:
+When users exit, regardless of token price increase or decrease, the system returns assets based on deposit value.
+
+Example:
+At deposit: 1 KNIGHTS = 0.1 USDT, Deposit 10,000 KNIGHTS, Value = 1,000 USDT
+Even if later price drops: 1 KNIGHTS = 0.05 USDT
+At exit: System still returns 1,000 USDT value
+
+This means: Users don't bear token price volatility risk, focusing more on AI quantitative returns.`
+      },
+      {
+        title: "5. Flywheel Model: Self-Reinforcing Growth System",
+        content: `KNIGHTS' core growth engine comes from the dual flywheel formed by:
+"On-Chain Trading Behavior + AI Quantitative Returns"
+
+Flywheel Path:
+Trading Volume Growth → Fee Growth → BNB Dividends Expand + LP Enhancement → User Yield Increase → More Users Deposit to Quant Pool → TVL Growth → AI Quant Scale Expansion → USDT Yield Enhancement → Market Activity Continues to Rise → Enter Next Growth Cycle
 
 System Characteristics:
-• Positive feedback structure: Each round of growth strengthens next round's growth capability
-• Self-reinforcing mechanism: Growth depends on internal circulation, not external stimulation
-• Non-linear growth: Efficiency improves as scale expands
-• Anti-fragility: Higher trading volume = more stable system
-
-Core Conclusion: Correct Structure → Behavior Driven → Automatic Growth`
+| Feature | Description |
+| Positive Feedback | Each growth round strengthens next round |
+| Self-Reinforcing | Growth depends on internal circulation |
+| Non-Linear Growth | Larger scale, higher efficiency |
+| Anti-Fragility | More active trading, more stable system |`
       },
       {
-        title: "5. Issuance Mechanism: Fair Launch & Full Circulation",
+        title: "6. Issuance Mechanism: Fair Launch & Full Circulation",
         content: `Basic Parameters:
-• Token Name: KNIGHTS
-• Total Supply: 1,000,000,000 (1 Billion)
-• Issuance Method: Platform Launch (Four)
-• Circulation: 100% Full Circulation
-• Team Allocation: 0
+| Item | Parameter |
+| Token Name | KNIGHTS |
+| Total Supply | 1,000,000,000 |
+| Issuance Method | Fair Launch |
+| Circulation | 100% Full Circulation |
+| Team Allocation | 0 |
 
 Design Principles:
-• No Pre-mine: Avoid early unfair distribution
-• No Lock-up: Eliminate future sell pressure expectations
-• No Linear Release: Avoid continuous supply market impact
-• No Team Allocation: Eliminate centralized control risk
+| Principle | Purpose |
+| No Pre-mine | Eliminate early unfairness |
+| No Team Share | Avoid centralized control |
+| No Lock-up Release | Eliminate future sell pressure |
+| Full Circulation | Complete market pricing |
 
-All participants enter at the same starting point, price completely determined by market supply and demand.`
+Core Conclusion:
+• All participants start at the same point
+• Price completely determined by market
+• No internal unlock pressure
+• No hidden shares`
       },
       {
-        title: "6. Gold Quantitative Empowerment: Real Off-chain Yield Support",
-        content: `KNIGHTS' external value comes from a mature AI quantitative trading system that has been running stably for over 10 years.
+        title: "7. Gold Quantitative Empowerment",
+        content: `KNIGHTS' core external value source:
+From a mature AI gold quantitative system running stably for over 10 years.
 
-System Background:
-• Operating Duration: 10+ years
-• Service Scale: 2000+ global communities
-• Trading Target: Gold (XAU/USD) main position
-• Strategy Type: Multi-factor high-frequency quant + trend capture
-• Risk Control: Dynamic stop-loss + ATR volatility filter
-• Sharpe Ratio Target: ≥1.5
-• Max Drawdown Target: ≤15%
+System Parameters:
+| Item | Description |
+| Running Time | 10+ years |
+| Service Scale | 2000+ global communities |
+| Core Market | Gold (XAU/USD) |
+| Strategy Type | High-frequency + Trend Quantitative |
+| Risk Control | ATR + Dynamic Stop-loss |
+| Target Sharpe Ratio | ≥1.5 |
+| Max Drawdown Target | ≤15% |
 
-Integration Method:
-• Initial: AI quant returns flow to ecosystem treasury for KNIGHTS buyback or dividend pool enhancement
-• Mid-term: KNIGHTS as AI system subscription payment tool
-• Long-term: KNIGHTS holders get AI strategy priority access or fee discounts
+Revenue Source:
+KNIGHTS deposited by users participate in AI gold quantitative trading at deposit value.
+System-generated returns are distributed to users in USDT.
 
-On-chain Flywheel + Off-chain Yield = Complete Value System`
+Core Significance:
+On-Chain Flywheel + Off-Chain Real Returns = Complete Value Loop`
       },
       {
-        title: "7. Three-Dimensional Value System",
-        content: `KNIGHTS value comes from synergy of three dimensions:
+        title: "8. Three-Dimensional Value System",
+        content: `Three Value Dimensions:
+| Dimension | Source | Result |
+| Yield Dimension | USDT + BNB | Dual Cash Flow |
+| Stability Dimension | LP Permanent Lock | Enhanced Depth |
+| Scarcity Dimension | Continuous Deflation | Supply Contraction |
 
-Yield Dimension: 70% Holder Dividends → Continuous Cash Flow
-Stability Dimension: 30% Permanent Lock LP → Enhanced Market Depth
-Scarcity Dimension: Transaction Burn → Continuous Deflation
+KNIGHTS Four Attributes:
+| Attribute | Source |
+| Yield Attribute | AI Quantitative Returns |
+| Dividend Attribute | BNB Dividends |
+| Store of Value | Liquidity Enhancement + Deflation |
+| Growth Attribute | Flywheel Model |
 
-Value = Yield Capability + Scarcity + Market Stability
+Comprehensive Value Formula:
+Value = Quantitative Yield Capability + Dividend Capability + Scarcity + Market Stability`
+      },
+      {
+        title: "9. Security Guarantees",
+        content: `9.1 Smart Contract Security
+• Contract Audit: Security audit completed
+• Contract Open Source: Verifiable on-chain
+• Auto Execution: No manual intervention
 
-Result: KNIGHTS simultaneously possesses:
-• Yield attribute: Holding generates BNB dividends
-• Store of value attribute: Deflation mechanism + liquidity support
-• Growth attribute: Flywheel model drives scale expansion`
+9.2 Fund Security
+• Principal Protection: Exit at deposit value
+• Multi-sig Treasury: Multi-permission management
+• Auto Liquidation: Contract auto-execution
+
+9.3 System Security
+• AI System: 10+ years live trading
+• Risk Control: Max drawdown ≤15%
+• LP Security: Permanently locked
+
+9.4 Trust Mechanism
+• All rules publicly transparent on-chain
+• All returns verifiable on-chain
+• No team allocation
+• No pre-mine
+• No hidden releases`
+      },
+      {
+        title: "10. Core Parameters Quick Reference",
+        content: `| Item | Parameter |
+| Token Name | KNIGHTS |
+| Total Supply | 1 Billion |
+| Transaction Tax | 3% |
+| BNB Dividends | 70% |
+| LP Enhancement | 30% |
+| Dividend Threshold | ≥100,000 KNIGHTS |
+| Quant Yield | USDT |
+| Principal Protection | ✅ |
+| Lock-up Period | 0 |
+| Yield Withdrawal | Instant |
+| Team Allocation | 0 |
+| LP Lock | Permanent |
+| Issuance Model | Fair Launch |
+| AI Quantitative | Gold XAU/USD |`
+      },
+      {
+        title: "Conclusion",
+        content: `KNIGHTS is not a token project purely driven by sentiment.
+It is an on-chain asset management protocol combining:
+"AI Quantitative Returns + On-Chain Liquidity + Automated Flywheel"
+
+Through KNIGHTS, users can:
+• Deposit tokens to participate in AI gold quantitative trading
+• Receive USDT quantitative returns
+• Receive BNB on-chain dividends
+• Exit anytime, no lock-up restrictions
+• Principal returned at deposit value
+
+KNIGHTS' core is not "speculation"
+But:
+Use structure to drive growth
+Use returns to support value
+Use mechanisms to form long-term cycles`
       },
     ],
   },
   zh: {
     sections: [
       {
+        title: "引言",
+        content: `过去的加密市场，大多数代币依赖情绪、流量与短期投机驱动。
+价格上涨依赖新的买盘，价值维系依赖市场热度，而一旦流动性减弱，系统便迅速失去增长动力。
+
+与此同时，传统量化交易行业虽然拥有成熟稳定的盈利能力，却长期封闭于机构体系内部：
+• 普通用户无法参与
+• 收益模型缺乏透明性
+• 资金效率低
+• 缺少链上流动性结构
+• 无法形成开放式网络增长
+
+KNIGHTS 的诞生，正是为了打通：
+「现实世界量化收益」与「链上增长结构」之间的断层。`
+      },
+      {
         title: "一、项目概述",
-        content: `在当前加密资产市场中，大多数代币的价值依赖于市场情绪与短期流动性驱动，缺乏稳定的价值支撑与持续增长机制。与此同时，传统量化交易行业虽具备稳定的收益能力与成熟的交易体系，但其发展长期受制于资金结构、信任机制与扩张能力的限制。
+        content: `1.1 行业背景
+当前加密市场中，大多数代币依赖市场情绪与短期流动性推动，缺乏持续稳定的价值支撑。与此同时，传统量化交易行业虽然拥有成熟的盈利模型与稳定的交易能力，却长期存在以下问题：
+• 资金高度依赖机构渠道
+• 用户参与门槛高
+• 收益结构不透明
+• 资金效率与流动性不足
+• 缺少链上可验证机制
 
-KNIGHTS 正是在这一背景下提出：通过链上结构，将量化能力与交易行为结合，构建具备内生增长能力的经济系统。
+1.2 KNIGHTS 的定位
+KNIGHTS 并非传统意义上的 Meme 代币，也不是单一收益型项目，而是一个：
+「AI量化能力 + 链上流动性 + 自动化经济模型」
+三者结合的链上资产管理协议。
 
-KNIGHTS 由多家长期从事黄金量化交易（XAUUSD）的独立量化团队联合发起，团队主要分布于亚洲量化交易中心（香港/新加坡）、离岸流动性市场（迪拜）、加密衍生品活跃区域（东南亚）。`
+通过智能合约与 DApp 系统，KNIGHTS 将：
+• AI 黄金量化收益
+• 链上交易行为
+• 流动性增长
+• 用户激励机制
+整合为一个具备自我增长能力的经济系统。
+
+1.3 发起机构
+KNIGHTS 由多家长期从事黄金量化交易（XAU/USD）的独立量化团队联合发起，团队核心成员分布于：
+• 香港
+• 新加坡
+• 迪拜
+• 东南亚`
       },
       {
         title: "二、核心逻辑：从「交易成本」到「价值生产」",
-        content: `基本公式：
-交易行为 → 手续费消��� ��� 结构化再分配 → 系统增强 → 交易动机提升 → 交易频次增长
+        content: `传统代币模型中，交易手续费通常意味着价值损耗。
+而 KNIGHTS 将交易行为重新定义为：「系统价值生产行为」
 
-关键转变对比：
-• 手续费属性：从交易成本变为价值来源
-• 交易对系统的影响：从消耗价值变为生产价值
-• 持有人状态：从被动等待上涨变为主动获得分红
-• 流动性来源：从依赖外部做市变为自动内生增长
-• 供应量模式：从固定或通胀变为持续通缩`
+核心逻辑：
+交易行为 → 手续费产生 → 结构化再分配 → 系统增强 → 用户收益提升 → 交易需求增加 → 交易活跃度持续增长
+
+模型差异对比：
+| 维度 | 传统模型 | KNIGHTS 模型 |
+| 手续费属性 | 交易成本 | 价值来源 |
+| 用户角色 | 被动等待上涨 | 主动参与收益系统 |
+| 流动性来源 | 外部做市 | 系统自动增强 |
+| 增长模式 | 依赖市场情绪 | 依赖内部飞轮 |
+| 供应结构 | 通胀或固定 | 持续通缩 |`
       },
       {
-        title: "三、核心机制：3% 交易税的三元分配模型",
-        content: `每一笔 KNIGHTS 交易收取 3% 手续费，按以下权重分配：
+        title: "三、核心机制：3% 交易税三元分配模型",
+        content: `每一笔 KNIGHTS 交易收取 3% 手续费，并自动完成链上分配。
 
-70% 持币分红：
-• 参与门槛：≥ 100,000 KNIGHTS
-• 分红币种：BNB（链上自动分发）
-• 结算方式：实时累积，自动到账
-• 质押要求：无需质押，持有即参与
+分配结构：
+| 分配方向 | 占比 | 功能 |
+| BNB 分红池 | 70% | 分配给 ≥10万 KNIGHTS 存入者 |
+| LP 流动性增强 | 30% | 自动增强市场深度并永久锁定 |
 
-30% 流动性增强（永久锁定）：
-• 每笔交易 → 30%税款自动兑换为 LP 代币 → 发送至黑洞地址永久锁定
+3.1 BNB 分红机制（70%）
+仅针对「存入 DApp AI 智能量化池且数量 ≥100,000 KNIGHTS」的用户开放。
+
+机制特点：
+• 分红币种：BNB
+• 链上实时累积
+• 自动结算
+• 秒级到账
+• 无需额外质押
+• 存入即参与
+
+3.2 LP 永久锁定机制（30%）
+每笔交易产生的 30% 税费：
+自动兑换 LP → 永久发送至黑洞地址
+
+作用：
 • 消除撤池风险
-• 降低大额抛售对价格的冲击
-• 流动性/市值比持续上升`
+• 增强市场深度
+• 降低价格波动
+• 提升资金稳定性
+• 强化长期价值支撑`
       },
       {
-        title: "四、飞轮模型：自我强化的动态系统",
-        content: `完整飞轮路径：
-交易量增加 → 手续费总量增加 → 分红池扩大 + 流动性加深 → 持有人APY提升 + 市场深度提升 + 稀缺性增强 → 持有动机增强 + 新资金入场 → 持币地址数增长 → 交易活跃度进一步提升 → （返回起点）
+        title: "四、DApp 与 AI 智能量化池",
+        content: `4.1 产品定位
+KNIGHTS DApp 是连接用户与 AI 量化系统的核心入口。
+用户通过 DApp 存入 KNIGHTS，即可参与 AI 驱动的黄金量化交易。
 
-系统特性分析：
-• 正反馈结构：每一轮增长强化下一轮增长能力
-• 自强化机制：增长依赖内部循环，非外部刺激
-• 非线性增长：规模扩大时，增长效率边际提升
-• 反脆弱性：交易量越大，系统越稳定
+4.2 核心特性：
+| 特性 | 说明 |
+| 本金保护 | 按存入时价值退出 |
+| 无锁仓 | 随时退出 |
+| 收益秒到账 | 链上自动结算 |
+| 双重收益 | USDT + BNB |
+| AI 自动执行 | 全程智能合约运行 |
 
-核心结论：结构正确 → 行为驱动 → 自动增长`
+4.3 参与流程：
+购买 KNIGHTS → 进入 KNIGHTS DApp → 存入 AI 智能量化池 → 系统按存入价值参与量化交易 → 每日产生 USDT 收益 → 满足 ≥10万存入量自动获得 BNB 分红 → 可随时退出，按存入价值返还本金
+
+4.4 本金保护机制
+KNIGHTS 采用「按存入价值退出」机制。
+即：用户退出时，无论代币价格上涨或下跌，系统均按照存入时的价值返还对应数量资产。
+
+示例：
+存入时：1 KNIGHTS = 0.1 USDT，存入 10,000 KNIGHTS，价值 = 1,000 USDT
+即使后续市场价格下跌：1 KNIGHTS = 0.05 USDT
+退出时：系统仍按 1,000 USDT 价值返还
+
+这意味着：用户无需承担代币价格波动风险，更专注于 AI 量化收益本身。`
       },
       {
-        title: "五、发行机制：公平发射与完全流通",
+        title: "五、飞轮模型：自我强化的增长系统",
+        content: `KNIGHTS 的核心增长引擎来自于：
+「链上交易行为 + AI 量化收益」形成的双重飞轮。
+
+飞轮路径：
+交易量增长 → 手续费增长 → BNB 分红扩大 + LP 增强 → 用户收益提升 → 更多用户存入量化池 → TVL 增长 → AI 量化规模扩大 → USDT 收益增强 → 市场活跃度继续提升 → 进入下一轮增长
+
+系统特性：
+| 特性 | 说明 |
+| 正反馈 | 每轮增长强化下一轮增长 |
+| 自强化 | 增长依赖系统内部循环 |
+| 非线性增长 | 规模越大效率越高 |
+| 反脆弱性 | 交易越活跃系统越稳定 |`
+      },
+      {
+        title: "六、发行机制：公平发射与完全流通",
         content: `基本参数：
-• 代币名称：KNIGHTS（骑士）
-• 总发行量：1,000,000,000（10亿）
-• 发行方式：平台发射（Four）
-• 流通状态：100% 全流通
-• 团队预留：0
+| 项目 | 参数 |
+| 代币名称 | KNIGHTS |
+| 总供应量 | 1,000,000,000 |
+| 发行方式 | 公平发射 |
+| 流通状态 | 100% 全流通 |
+| 团队预留 | 0 |
 
-设计原则与目的：
-• 无预挖：避免早期不公平分配
-• 无锁仓：消除未来抛压预期
-• 无线性释放：避免供给持续冲击市场
-• 无团队预留：消除中心化控盘风险
+设计原则：
+| 原则 | 目的 |
+| 无预挖 | 消除早期不公平 |
+| 无团队份额 | 避免中心化控盘 |
+| 无锁仓释放 | 消除后期抛压 |
+| 全流通 | 市场完全定价 |
 
-所有参与者在同一起点进入，价格完全由市场供需决定。`
+核心结论：
+• 所有参与者站在同一起点
+• 价格完全由市场决定
+• 不存在内部解锁抛压
+• 不存在隐藏份额`
       },
       {
-        title: "六、黄金量化赋能：链下真实收益支撑",
-        content: `KNIGHTS 的外部价值来源来自一个已稳定运行超过 10年 的成熟 AI 量化交易系统。
+        title: "七、黄金量化赋能",
+        content: `KNIGHTS 的核心外部价值来源：
+来自一个已稳定运行超过 10 年的 AI 黄金量化系统。
 
-系统背景：
-• 运行时长：10+ 年
-• 服务规模：全球 2000+ 社区
-• 交易标的：黄金（XAU/USD）主仓位
-• 策略类型：多因子高频量化 + 趋势捕捉
-• 风控体系：动态止损 + ATR 波动率过滤
-• 夏普比率目标：≥ 1.5
-• 最大回撤目标：≤ 15%
+系统参数：
+| 项目 | 说明 |
+| 运行时间 | 10+ 年 |
+| 服务社区 | 全球 2000+ |
+| 核心市场 | 黄金（XAU/USD）|
+| 策略类型 | 高频 + 趋势量化 |
+| 风控体系 | ATR + 动态止损 |
+| 目标夏普比 | ≥1.5 |
+| 最大回撤目标 | ≤15% |
 
-KNIGHTS 与 AI 系统的结合方式：
-• 初期：AI 量化收益归入生态金库，用于回购 KNIGHTS 或增强分红池
-• 中期：KNIGHTS 作为 AI 系统订阅支付工具
-• 长期：KNIGHTS 持有者获得 AI 策略优先访问权或费率折扣
+收益来源：
+用户存入的 KNIGHTS 将按存入时价值参与 AI 黄金量化交易。
+系统产生的收益以 USDT 形式分配给用户。
 
-链上飞轮 + 链下收益 = 完整价值体系`
+核心意义：
+链上飞轮 + 链下真实收益 = 完整价值闭环`
       },
       {
-        title: "七、三维价值体系",
-        content: `KNIGHTS 的价值来自三个维度的协同作用：
+        title: "八、三维价值体系",
+        content: `三大价值维度：
+| 维度 | 来源 | 结果 |
+| 收益维度 | USDT + BNB | 双重现金流 |
+| 稳定维度 | LP 永久锁定 | 深度增强 |
+| 稀缺维度 | 持续通缩 | 供应收缩 |
 
-收益维度：70% 持币分红 → 持续现金流
-稳定维度：30% 永久锁仓 LP → 市场深度增强
-稀缺维度：交易销毁 → 持续通缩
+KNIGHTS 四重属性：
+| 属性 | 来源 |
+| 收益属性 | AI 量化收益 |
+| 分红属性 | BNB 分红 |
+| 储值属性 | 流动性增强 + 通缩 |
+| 增长属性 | 飞轮模型 |
 
-综合模型：价值 = 收益能力 + 稀缺性 + 市场稳定性
+综合价值公式：
+价值 = 量化收益能力 + 分红能力 + 稀缺性 + 市场稳定性`
+      },
+      {
+        title: "九、安全保障",
+        content: `9.1 智能合约安全
+• 合约审计：已完成安全审计
+• 合约开源：链上可验证
+• 自动执行：无人工干预
 
-结果：该体系使 KNIGHTS 同时具备：
-• 收益属性：持币产生 BNB 分红
-• 储值属性：通缩机制 + 流动性支撑
-• 增长属性：飞轮模型驱动规模扩张`
+9.2 资金安全
+• 本金保护：按存入价值退出
+• 多签金库：多重权限管理
+• 自动清算：合约自动执行
+
+9.3 系统安全
+• AI 系统：10+ 年实盘运行
+• 风控机制：最大回撤 ≤15%
+• LP 安全：永久锁定
+
+9.4 信任机制
+• 所有规则链上公开透明
+• 所有收益链上可查
+• 无团队预留
+• 无预挖
+• 无隐藏释放`
+      },
+      {
+        title: "十、核心参数速查",
+        content: `| 项目 | 参数 |
+| 代币名称 | KNIGHTS |
+| 总供应量 | 10亿 |
+| 交易税 | 3% |
+| BNB 分红 | 70% |
+| LP 增强 | 30% |
+| 分红门槛 | ≥100,000 KNIGHTS |
+| 量化收益 | USDT |
+| 本金保护 | ✅ |
+| 锁仓时间 | 0 |
+| 收益提现 | 随时秒到账 |
+| 团队预留 | 0 |
+| LP 锁定 | 永久 |
+| 发行模式 | 公平发射 |
+| AI 量化 | 黄金 XAU/USD |`
+      },
+      {
+        title: "结语",
+        content: `KNIGHTS 并不是一个单纯依赖情绪推动的代币项目。
+它是一个：
+「AI量化收益 + 链上流动性 + 自动化飞轮」
+结合的链上资产管理协议。
+
+用户通过 KNIGHTS 可以：
+• 存入代币参与 AI 黄金量化
+• 获得 USDT 量化收益
+• 获得 BNB 链上分红
+• 随时退出，无锁仓限制
+• 按存入价值返还本金
+
+KNIGHTS 的核心不是「炒作」
+而是：
+用结构驱动增长
+用收益支撑价值
+用机制形成长期循环`
       },
     ],
   },
@@ -498,7 +843,10 @@ function WhitepaperModal({ isOpen, onClose, lang }: { isOpen: boolean; onClose: 
       <div className="absolute inset-0 bg-background/95 backdrop-blur-xl" onClick={onClose} />
       <div className="relative w-full max-w-4xl max-h-[90vh] bg-card border border-primary/30 rounded-2xl shadow-2xl shadow-primary/20 overflow-hidden">
         <div className="sticky top-0 z-10 flex items-center justify-between p-4 sm:p-6 bg-card border-b border-primary/20">
-          <h2 className="text-xl sm:text-2xl font-bold text-primary drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">{t.title}</h2>
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold text-primary drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">{t.title}</h2>
+            <p className="text-sm text-foreground/60 mt-1">{t.subtitle}</p>
+          </div>
           <button
             onClick={onClose}
             className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
@@ -506,7 +854,7 @@ function WhitepaperModal({ isOpen, onClose, lang }: { isOpen: boolean; onClose: 
             <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
-        <div className="p-4 sm:p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+        <div className="p-4 sm:p-6 overflow-y-auto max-h-[calc(90vh-100px)]">
           <div className="space-y-8">
             {content.sections.map((section, index) => (
               <div key={index} className="space-y-4">
@@ -1097,22 +1445,34 @@ export default function KnightsLanding() {
             <p className="text-foreground/70 max-w-2xl mx-auto text-lg">{t.ai.desc}</p>
           </div>
 
+          {/* Features Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
             {t.ai.features.map((item, index) => (
               <GlowingBorder key={index}>
                 <div className="p-5 rounded-xl bg-card border border-primary/20 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2 drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">{item.title}</div>
+                  <div className="text-xl font-bold text-primary mb-2 drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">{item.title}</div>
                   <p className="text-sm text-foreground/60">{item.desc}</p>
                 </div>
               </GlowingBorder>
             ))}
           </div>
 
-          <div className="max-w-2xl mx-auto">
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
+            {t.ai.stats.map((stat, index) => (
+              <div key={index} className="p-4 rounded-xl bg-primary/10 border border-primary/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-primary drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">{stat.value}</div>
+                <p className="text-xs sm:text-sm text-foreground/60">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Integration Flow */}
+          <div className="max-w-3xl mx-auto">
             <GlowingBorder>
               <div className="p-6 rounded-xl bg-card border border-primary/20 text-center">
                 <Bot className="w-10 h-10 text-primary mx-auto mb-4 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                <p className="text-foreground/80">{t.ai.integration}</p>
+                <p className="text-foreground/80 text-sm sm:text-base">{t.ai.integration}</p>
               </div>
             </GlowingBorder>
           </div>
@@ -1172,7 +1532,7 @@ export default function KnightsLanding() {
             <p className="text-foreground/70 max-w-2xl mx-auto text-lg">{t.tokenomics.desc}</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {t.tokenomics.principles.map((item, index) => (
               <GlowingBorder key={index}>
                 <div className="p-4 rounded-xl bg-card border border-primary/20 text-center">
@@ -1182,16 +1542,37 @@ export default function KnightsLanding() {
               </GlowingBorder>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {t.tokenomics.principles.map((principle, i) => (
-              <GlowingBorder key={i}>
-                <div className="p-5 rounded-xl bg-card border border-primary/20">
-                  <h3 className="font-bold text-foreground mb-2">{principle.title}</h3>
-                  <p className="text-sm text-foreground/70">{principle.desc}</p>
+      {/* Three-Dimensional Value System Section */}
+      <section className="relative py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
+              <span className="text-primary font-semibold text-xs sm:text-sm">{t.value.badge}</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">{t.value.title}</h2>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
+            {t.value.dimensions.map((dim, index) => (
+              <GlowingBorder key={index}>
+                <div className="p-6 rounded-xl bg-card border border-primary/20 text-center">
+                  {dim.icon === "coins" && <Coins className="w-10 h-10 text-primary mx-auto mb-4 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />}
+                  {dim.icon === "shield" && <Shield className="w-10 h-10 text-primary mx-auto mb-4 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />}
+                  {dim.icon === "trending" && <TrendingUp className="w-10 h-10 text-primary mx-auto mb-4 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />}
+                  <h3 className="font-bold text-foreground mb-2">{dim.title}</h3>
+                  <p className="text-sm text-foreground/60">{dim.desc}</p>
                 </div>
               </GlowingBorder>
             ))}
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <div className="p-4 rounded-xl bg-primary/10 border border-primary/30 text-center">
+              <p className="text-primary font-mono text-sm">{t.value.formula}</p>
+            </div>
           </div>
         </div>
       </section>
