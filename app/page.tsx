@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Menu, X, Twitter, Send, Mail, FileText, ChevronDown, Zap, Shield, TrendingUp, Users, Coins, Globe } from "lucide-react"
+import { Menu, X, Twitter, Send, Mail, FileText, ChevronDown, Zap, Shield, TrendingUp, Users, Coins, Globe, Bot, Target, LineChart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -11,14 +11,16 @@ const translations = {
     nav: {
       about: "About",
       mechanism: "Mechanism",
+      ai: "AI Quant",
       tokenomics: "Tokenomics",
       community: "Community",
+      whitepaper: "Whitepaper",
     },
     hero: {
-      badge: "BSC Meme Value Model",
+      badge: "BSC Quant Value Model",
       title1: "Positive Flywheel",
-      title2: "Community Token",
-      desc: "KNIGHTS builds a self-reinforcing economic system based on dividend support, liquidity enhancement, and community-driven growth engine.",
+      title2: "Quant Token",
+      desc: "KNIGHTS connects quantitative capabilities with on-chain liquidity to build a self-reinforcing economic system with real yield support.",
       whitepaper: "Read Whitepaper",
       totalSupply: "Total Supply",
       tax: "Transaction Tax",
@@ -28,11 +30,15 @@ const translations = {
     about: {
       badge: "PROJECT OVERVIEW",
       title: "Building a Self-Reinforcing On-Chain Economic System",
-      desc: "KNIGHTS is not a short-term emotional coin, but builds a positive flywheel structure: Trading = Income, Holding = Dividends, Circulation = Growth.",
+      desc: "KNIGHTS transforms traditional quantitative trading systems from closed fund management to open on-chain asset management structures.",
       flywheel: "Positive Flywheel",
       flywheelDesc: "Sustained self-reinforcing system",
       fair: "Fair & Transparent",
       fairDesc: "All distributions on-chain",
+      quant: "Quant Strategy",
+      quantDesc: "10+ years gold trading",
+      network: "Global Network",
+      networkDesc: "2000+ global communities",
     },
     mechanism: {
       badge: "CORE MECHANISM",
@@ -40,20 +46,34 @@ const translations = {
       desc: "Every transaction collects 3% tax, allocated according to the following structure",
       dividends: {
         title: "Holder Dividends",
+        percent: "70%",
         features: [
           "All taxes auto-convert to BNB dividends",
           "Hold 100,000+ KNIGHTS to participate",
-          "Trigger-based auto distribution",
+          "Real-time accumulation, auto distribution",
         ],
       },
       liquidity: {
         title: "Liquidity Enhancement",
+        percent: "30%",
         features: [
           "Auto-inject LP pool (permanent lock)",
-          "Auto-increase trading depth",
+          "Eliminate rug pull risk",
           "Enhanced price stability",
         ],
       },
+    },
+    ai: {
+      badge: "AI QUANTITATIVE",
+      title: "Gold Quantitative System Empowerment",
+      desc: "External value support from a mature AI quantitative trading system that has been running stably for over 10 years",
+      features: [
+        { title: "10+ Years", desc: "Stable operation" },
+        { title: "2000+", desc: "Global communities" },
+        { title: "XAU/USD", desc: "Gold trading" },
+        { title: "≥1.5", desc: "Sharpe ratio target" },
+      ],
+      integration: "AI system returns flow back to ecosystem treasury for KNIGHTS buyback or dividend pool enhancement",
     },
     flywheel: {
       badge: "POSITIVE FLYWHEEL",
@@ -65,20 +85,21 @@ const translations = {
         "Attract More Holders",
         "Further Increase Trading Volume",
       ],
+      formula: "Quant × Liquidity × Network = Scalable Financial Infrastructure",
     },
     tokenomics: {
       badge: "TOKENOMICS",
       title: "1 Billion Total Supply",
-      desc: "Fair launch based on FOUR platform, trade immediately upon listing, 100% on-chain transparent circulation",
+      desc: "Fair launch based on FOUR platform, 100% circulation, zero team allocation, zero lock-up",
       communityCore: "Community Core Private Sale",
-      communitySeats: "0.5 BNB per share",
+      communitySeats: "0.5 BNB per share\nPrivate Sale Address: 0x9992175f22E6C19C36c933997749491564566A95",
       communityFeatures: ["Community Building", "Content Dissemination", "KOL Expansion", "Consensus Building"],
-      fairTitle: "Fair & Transparent",
-      fairDesc: "All distributions executed on-chain, verifiable and traceable",
-      freeTitle: "Free Circulation",
-      freeDesc: "Trade upon listing, no lock-up mechanism",
-      consensusTitle: "Consensus Driven",
-      consensusDesc: "Every participant: Investor + LP + Node",
+      principles: [
+        { title: "No Pre-mine", desc: "Avoid early unfair distribution" },
+        { title: "No Lock-up", desc: "Eliminate future sell pressure expectations" },
+        { title: "No Linear Release", desc: "Avoid continuous supply impact" },
+        { title: "No Team Allocation", desc: "Eliminate centralized control risk" },
+      ],
     },
     community: {
       badge: "JOIN COMMUNITY",
@@ -102,24 +123,29 @@ const translations = {
       taxRate: "Tax Rate",
       dividendPool: "Dividend Pool",
       liquidityPool: "Liquidity Pool",
-      burnRate: "Burn Rate",
       totalSupply: "Total Supply",
       minHold: "Min Hold",
       status: "Status",
+    },
+    whitepaper: {
+      title: "KNIGHTS Whitepaper",
+      close: "Close",
     },
   },
   zh: {
     nav: {
       about: "关于",
       mechanism: "机制",
+      ai: "AI量化",
       tokenomics: "代币经济",
       community: "社区",
+      whitepaper: "白皮书",
     },
     hero: {
-      badge: "BSC Meme 价值模型",
+      badge: "BSC 量化价值模型",
       title1: "正向飞轮",
-      title2: "社区代币",
-      desc: "骑士构建基于分红支撑、流动性增强与社区驱动增长引擎的自我强化经济系统。",
+      title2: "量化代币",
+      desc: "骑士将量化能力与链上流动性结合，构建具有真实收益支撑的自我强化经济系统。",
       whitepaper: "阅读白皮书",
       totalSupply: "总发行量",
       tax: "交易税",
@@ -129,11 +155,15 @@ const translations = {
     about: {
       badge: "项目概览",
       title: "构建链上自我强化经济系统",
-      desc: "骑士不是短期情绪币，而是构建正向飞轮结构：交易 = 收益，持有 = 分红，流通 = 增值。",
-      flywheel: ,
+      desc: "骑士将传统量化交易体系，从封闭式资金管理，升级为开放式链上资产管理结构。",
+      flywheel: "正向飞轮",
       flywheelDesc: "持续自我强化系统",
       fair: "公平透明",
       fairDesc: "所有分配链上执行",
+      quant: "量化策略",
+      quantDesc: "10+ 年黄金交易",
+      network: "全球网络",
+      networkDesc: "2000+ 全球社区",
     },
     mechanism: {
       badge: "核心机制",
@@ -141,20 +171,34 @@ const translations = {
       desc: "每笔交易收取 3% 税费，按以下结构分配",
       dividends: {
         title: "持有者分红",
+        percent: "70%",
         features: [
           "所有税收自动转换为 BNB 分红",
           "持有 10 万+ 骑士参与",
-          "触发式自动分配",
+          "实时累积，自动到账",
         ],
       },
       liquidity: {
         title: "流动性增强",
+        percent: "30%",
         features: [
           "自动注入 LP 池（永久锁定）",
-          "自动增加交易深度",
+          "消除撤池风险",
           "增强价格稳定性",
         ],
       },
+    },
+    ai: {
+      badge: "AI 量化赋能",
+      title: "黄金量化系统赋能",
+      desc: "外部价值支撑来自一个已稳定运行超过 10 年的成熟 AI 量化交易系统",
+      features: [
+        { title: "10+ 年", desc: "稳定运行" },
+        { title: "2000+", desc: "全球社区" },
+        { title: "XAU/USD", desc: "黄金交易" },
+        { title: "≥1.5", desc: "夏普比率目标" },
+      ],
+      integration: "AI 量化收益归入生态金库，用于回购骑士或增强分红池",
     },
     flywheel: {
       badge: "正向飞轮",
@@ -166,20 +210,21 @@ const translations = {
         "吸引更多持有者",
         "进一步增加交易量",
       ],
+      formula: "量化 × 流动性 × 网络 = 可扩展金融基础设施",
     },
     tokenomics: {
       badge: "代币经济学",
       title: "10 亿总发行量",
-      desc: "基于 FOUR 平台公平发射，上线即可交易，100% 链上透明流通",
+      desc: "基于 FOUR 平台公平发射，100% 全流通，零团队预留，零锁仓",
       communityCore: "社区核心私募",
-      communitySeats: "0.5 BNB / 份",
+      communitySeats: "0.5 BNB / 份\n私募地址：0x9992175f22E6C19C36c933997749491564566A95",
       communityFeatures: ["社区建设", "内容传播", "KOL 拓展", "共识构建"],
-      fairTitle: "公平透明",
-      fairDesc: "所有分配链上执行，可验证可追溯",
-      freeTitle: "自由流通",
-      freeDesc: "上线即可交易，无锁仓机制",
-      consensusTitle: "共识驱动",
-      consensusDesc: "每位参与者：投资者 + LP + 节点",
+      principles: [
+        { title: "无预挖", desc: "避免早期不公平分配" },
+        { title: "无锁仓", desc: "消除未来抛压预期" },
+        { title: "无线性释放", desc: "避免供给持续冲击" },
+        { title: "无团队预留", desc: "消除中心化控盘风险" },
+      ],
     },
     community: {
       badge: "加入社区",
@@ -207,10 +252,276 @@ const translations = {
       minHold: "最低持有",
       status: "状态",
     },
+    whitepaper: {
+      title: "骑士白皮书",
+      close: "关闭",
+    },
+  },
+}
+
+// Whitepaper content
+const whitepaperContent = {
+  en: {
+    sections: [
+      {
+        title: "1. Project Overview",
+        content: `In the current crypto market, most tokens rely on market sentiment and short-term liquidity, lacking stable value support and sustainable growth mechanisms. Meanwhile, traditional quantitative trading has mature strategies but is limited by fund structure and trust mechanisms.
+
+KNIGHTS proposes: Combining quantitative capabilities with trading behavior through on-chain structures to build an economic system with intrinsic growth capability.
+
+KNIGHTS is jointly initiated by multiple independent quantitative teams with long-term experience in gold (XAUUSD) quantitative trading, distributed across Asian quantitative trading centers (Hong Kong/Singapore), offshore liquidity markets (Dubai), and crypto derivatives active regions (Southeast Asia).`
+      },
+      {
+        title: "2. Core Logic: From 'Transaction Cost' to 'Value Production'",
+        content: `Basic Formula:
+Trading Behavior → Fee Consumption → Structured Redistribution → System Enhancement → Trading Motivation Increase → Trading Frequency Growth
+
+Key Transformations:
+• Fee attribute: From transaction cost to value source
+• Impact on system: From value consumption to value production
+• Holder status: From passive waiting to active dividend receiving
+• Liquidity source: From external market makers to automatic internal growth
+• Supply model: From fixed/inflation to continuous deflation`
+      },
+      {
+        title: "3. Core Mechanism: 3% Transaction Tax Allocation",
+        content: `Every KNIGHTS transaction collects 3% fee, allocated as follows:
+
+70% Holder Dividends:
+• Participation threshold: ≥100,000 KNIGHTS
+• Dividend currency: BNB (auto-distributed on-chain)
+• Settlement: Real-time accumulation, auto arrival
+• No staking required, holding is participating
+
+30% Liquidity Enhancement (Permanent Lock):
+• Each transaction → 30% tax auto-converts to LP tokens → Sent to black hole address for permanent lock
+• Eliminates rug pull risk
+• Reduces large sell-off impact on price
+• Liquidity/market cap ratio continues to rise`
+      },
+      {
+        title: "4. Flywheel Model: Self-Reinforcing Dynamic System",
+        content: `Complete Flywheel Path:
+Transaction Volume Increase → Fee Total Increase → Dividend Pool Expansion + Liquidity Deepening → Holder APY Increase + Market Depth Increase + Scarcity Enhancement → Holding Motivation Enhancement + New Capital Entry → Holder Address Growth → Trading Activity Further Increase → (Return to Start)
+
+System Characteristics:
+• Positive feedback structure: Each round of growth strengthens next round's growth capability
+• Self-reinforcing mechanism: Growth depends on internal circulation, not external stimulation
+• Non-linear growth: Efficiency improves as scale expands
+• Anti-fragility: Higher trading volume = more stable system
+
+Core Conclusion: Correct Structure → Behavior Driven → Automatic Growth`
+      },
+      {
+        title: "5. Issuance Mechanism: Fair Launch & Full Circulation",
+        content: `Basic Parameters:
+• Token Name: KNIGHTS
+• Total Supply: 1,000,000,000 (1 Billion)
+• Issuance Method: Platform Launch (Four)
+• Circulation: 100% Full Circulation
+• Team Allocation: 0
+
+Design Principles:
+• No Pre-mine: Avoid early unfair distribution
+• No Lock-up: Eliminate future sell pressure expectations
+• No Linear Release: Avoid continuous supply market impact
+• No Team Allocation: Eliminate centralized control risk
+
+All participants enter at the same starting point, price completely determined by market supply and demand.`
+      },
+      {
+        title: "6. Gold Quantitative Empowerment: Real Off-chain Yield Support",
+        content: `KNIGHTS' external value comes from a mature AI quantitative trading system that has been running stably for over 10 years.
+
+System Background:
+• Operating Duration: 10+ years
+• Service Scale: 2000+ global communities
+• Trading Target: Gold (XAU/USD) main position
+• Strategy Type: Multi-factor high-frequency quant + trend capture
+• Risk Control: Dynamic stop-loss + ATR volatility filter
+• Sharpe Ratio Target: ≥1.5
+• Max Drawdown Target: ≤15%
+
+Integration Method:
+• Initial: AI quant returns flow to ecosystem treasury for KNIGHTS buyback or dividend pool enhancement
+• Mid-term: KNIGHTS as AI system subscription payment tool
+• Long-term: KNIGHTS holders get AI strategy priority access or fee discounts
+
+On-chain Flywheel + Off-chain Yield = Complete Value System`
+      },
+      {
+        title: "7. Three-Dimensional Value System",
+        content: `KNIGHTS value comes from synergy of three dimensions:
+
+Yield Dimension: 70% Holder Dividends → Continuous Cash Flow
+Stability Dimension: 30% Permanent Lock LP → Enhanced Market Depth
+Scarcity Dimension: Transaction Burn → Continuous Deflation
+
+Value = Yield Capability + Scarcity + Market Stability
+
+Result: KNIGHTS simultaneously possesses:
+• Yield attribute: Holding generates BNB dividends
+• Store of value attribute: Deflation mechanism + liquidity support
+• Growth attribute: Flywheel model drives scale expansion`
+      },
+    ],
+  },
+  zh: {
+    sections: [
+      {
+        title: "一、项目概述",
+        content: `在当前加密资产市场中，大多数代币的价值依赖于市场情绪与短期流动性驱动，缺乏稳定的价值支撑与持续增长机制。与此同时，传统量化交易行业虽具备稳定的收益能力与成熟的交易体系，但其发展长期受制于资金结构、信任机制与扩张能力的限制。
+
+KNIGHTS 正是在这一背景下提出：通过链上结构，将量化能力与交易行为结合，构建具备内生增长能力的经济系统。
+
+KNIGHTS 由多家长期从事黄金量化交易（XAUUSD）的独立量化团队联合发起，团队主要分布于亚洲量化交易中心（香港/新加坡）、离岸流动性市场（迪拜）、加密衍生品活跃区域（东南亚）。`
+      },
+      {
+        title: "二、核心逻辑：从"交易成本"到"价值生产"",
+        content: `基本公式：
+交易行为 → 手续费消耗 → 结构化再分配 → 系统增强 → 交易动机提升 → 交易频次增长
+
+关键转变对比：
+• 手续费属性：从交易成本变为价值来源
+• 交易对系统的影响：从消耗价值变为生产价值
+• 持有人状态：从被动等待上涨变为主动获得分红
+• 流动性来源：从依赖外部做市变为自动内生增长
+• 供应量模式：从固定或通胀变为持续通缩`
+      },
+      {
+        title: "三、核心机制：3% 交易税的三元分配模型",
+        content: `每一笔 KNIGHTS 交易收取 3% 手续费，按以下权重分配：
+
+70% 持币分红：
+• 参与门槛：≥ 100,000 KNIGHTS
+• 分红币种：BNB（链上自动分发）
+• 结算方式：实时累积，自动到账
+• 质押要求：无需质押，持有即参与
+
+30% 流动性增强（永久锁定）：
+• 每笔交易 → 30%税款自动兑换为 LP 代币 → 发送至黑洞地址永久锁定
+• 消除撤池风险
+• 降低大额抛售对价格的冲击
+• 流动性/市值比持续上升`
+      },
+      {
+        title: "四、飞轮模型：自我强化的动态系统",
+        content: `完整飞轮路径：
+交易量增加 → 手续费总量增加 → 分红池扩大 + 流动性加深 → 持有人APY提升 + 市场深度提升 + 稀缺性增强 → 持有动机增强 + 新资金入场 → 持币地址数增长 → 交易活跃度进一步提升 → （返回起点）
+
+系统特性分析：
+• 正反馈结构：每一轮增长强化下一轮增长能力
+• 自强化机制：增长依赖内部循环，非外部刺激
+• 非线性增长：规模扩大时，增长效率边际提升
+• 反脆弱性：交易量越大，系统越稳定
+
+核心结论：结构正确 → 行为驱动 → 自动增长`
+      },
+      {
+        title: "五、发行机制：公平发射与完全流通",
+        content: `基本参数：
+• 代币名称：KNIGHTS（骑士）
+• 总发行量：1,000,000,000（10亿）
+• 发行方式：平台发射（Four）
+• 流通状态：100% 全流通
+• 团队预留：0
+
+设计原则与目的：
+• 无预挖：避免早期不公平分配
+• 无锁仓：消除未来抛压预期
+• 无线性释放：避免供给持续冲击市场
+• 无团队预留：消除中心化控盘风险
+
+所有参与者在同一起点进入，价格完全由市场供需决定。`
+      },
+      {
+        title: "六、黄金量化赋能：链下真实收益支撑",
+        content: `KNIGHTS 的外部价值来源来自一个已稳定运行超过 10年 的成熟 AI 量化交易系统。
+
+系统背景：
+• 运行时长：10+ 年
+• 服务规模：全球 2000+ 社区
+• 交易标的：黄金（XAU/USD）主仓位
+• 策略类型：多因子高频量化 + 趋势捕捉
+• 风控体系：动态止损 + ATR 波动率过滤
+• 夏普比率目标：≥ 1.5
+• 最大回撤目标：≤ 15%
+
+KNIGHTS 与 AI 系统的结合方式：
+• 初期：AI 量化收益归入生态金库，用于回购 KNIGHTS 或增强分红池
+• 中期：KNIGHTS 作为 AI 系统订阅支付工具
+• 长期：KNIGHTS 持有者获得 AI 策略优先访问权或费率折扣
+
+链上飞轮 + 链下收益 = 完整价值体系`
+      },
+      {
+        title: "七、三维价值体系",
+        content: `KNIGHTS 的价值来自三个维度的协同作用：
+
+收益维度：70% 持币分红 → 持续现金流
+稳定维度：30% 永久锁仓 LP → 市场深度增强
+稀缺维度：交易销毁 → 持续通缩
+
+综合模型：价值 = 收益能力 + 稀缺性 + 市场稳定性
+
+结果：该体系使 KNIGHTS 同时具备：
+• 收益属性：持币产生 BNB 分红
+• 储值属性：通缩机制 + 流动性支撑
+• 增长属性：飞轮模型驱动规模扩张`
+      },
+    ],
   },
 }
 
 type Lang = "en" | "zh"
+
+// Whitepaper Modal Component
+function WhitepaperModal({ isOpen, onClose, lang }: { isOpen: boolean; onClose: () => void; lang: Lang }) {
+  const t = translations[lang].whitepaper
+  const content = whitepaperContent[lang]
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
+
+  if (!isOpen) return null
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-background/95 backdrop-blur-xl" onClick={onClose} />
+      <div className="relative w-full max-w-4xl max-h-[90vh] bg-card border border-primary/30 rounded-2xl shadow-2xl shadow-primary/20 overflow-hidden">
+        <div className="sticky top-0 z-10 flex items-center justify-between p-4 sm:p-6 bg-card border-b border-primary/20">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">{t.title}</h2>
+          <button
+            onClick={onClose}
+            className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
+          >
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+        </div>
+        <div className="p-4 sm:p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+          <div className="space-y-8">
+            {content.sections.map((section, index) => (
+              <div key={index} className="space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold text-primary">{section.title}</h3>
+                <div className="text-foreground/80 whitespace-pre-line leading-relaxed text-sm sm:text-base">
+                  {section.content}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 // Optimized Animated Grid - cleaner, fewer particles
 function AnimatedGrid() {
@@ -346,7 +657,6 @@ function AnimatedGrid() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
       <canvas ref={canvasRef} className="absolute inset-0" />
-      {/* Subtle ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/8 rounded-full blur-[150px]" />
       <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px]" />
     </div>
@@ -480,6 +790,7 @@ export default function KnightsLanding() {
   const [scrolled, setScrolled] = useState(false)
   const [lang, setLang] = useState<Lang>("en")
   const [mounted, setMounted] = useState(false)
+  const [whitepaperOpen, setWhitepaperOpen] = useState(false)
 
   const t = translations[lang]
 
@@ -502,6 +813,7 @@ export default function KnightsLanding() {
   const navLinks = [
     { href: "#about", label: t.nav.about },
     { href: "#mechanism", label: t.nav.mechanism },
+    { href: "#ai", label: t.nav.ai },
     { href: "#tokenomics", label: t.nav.tokenomics },
     { href: "#community", label: t.nav.community },
   ]
@@ -510,12 +822,10 @@ export default function KnightsLanding() {
     { href: "https://x.com/knightstoken", icon: Twitter, label: "Twitter" },
     { href: "https://t.me/knightsfour", icon: Send, label: "Telegram" },
     { href: "mailto:flybabyaile@gmail.com", icon: Mail, label: "Email" },
-    { href: "https://knightsweb.gitbook.io/knights-whitepaper", icon: FileText, label: "Whitepaper" },
   ]
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden" suppressHydrationWarning>
-      {/* Global CSS for animations */}
       <style jsx global>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
@@ -524,6 +834,7 @@ export default function KnightsLanding() {
       `}</style>
 
       <AnimatedGrid />
+      <WhitepaperModal isOpen={whitepaperOpen} onClose={() => setWhitepaperOpen(false)} lang={lang} />
 
       {/* Navigation */}
       <nav
@@ -533,13 +844,11 @@ export default function KnightsLanding() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo - clickable to scroll to top */}
             <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <span className="text-2xl font-bold text-primary drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">KNIGHTS</span>
+              <span className="text-2xl font-bold text-primary drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">{lang === "en" ? "KNIGHTS" : "骑士"}</span>
             </button>
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -549,11 +858,17 @@ export default function KnightsLanding() {
                   {link.label}
                 </a>
               ))}
+              <button
+                onClick={() => setWhitepaperOpen(true)}
+                className="text-foreground/80 hover:text-primary transition-colors text-sm font-medium"
+              >
+                {t.nav.whitepaper}
+              </button>
             </div>
 
             <div className="hidden md:flex items-center gap-4">
               <LanguageSwitcher lang={lang} setLang={setLang} mounted={mounted} />
-              {socialLinks.slice(0, 3).map((link) => (
+              {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -566,7 +881,6 @@ export default function KnightsLanding() {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
             <div className="flex md:hidden items-center gap-3">
               <LanguageSwitcher lang={lang} setLang={setLang} mounted={mounted} />
               <button
@@ -579,7 +893,6 @@ export default function KnightsLanding() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-background/98 backdrop-blur-xl border-b border-primary/20">
             <div className="px-4 py-4 space-y-4">
@@ -593,6 +906,15 @@ export default function KnightsLanding() {
                   {link.label}
                 </a>
               ))}
+              <button
+                onClick={() => {
+                  setWhitepaperOpen(true)
+                  setMobileMenuOpen(false)
+                }}
+                className="block text-foreground/80 hover:text-primary transition-colors w-full text-left"
+              >
+                {t.nav.whitepaper}
+              </button>
               <div className="flex gap-4 pt-4 border-t border-border">
                 {socialLinks.map((link) => (
                   <a
@@ -611,9 +933,8 @@ export default function KnightsLanding() {
         )}
       </nav>
 
-      {/* Hero Section with Knight Background */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
-        {/* Knight Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/knight-hero.jpg"
@@ -628,7 +949,6 @@ export default function KnightsLanding() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 relative z-10">
           <div className="text-center space-y-6 sm:space-y-8" suppressHydrationWarning>
-            {/* Floating badge */}
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/20 border border-primary/40 shadow-lg shadow-primary/20 animate-[float_6s_ease-in-out_infinite]">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-primary text-xs sm:text-sm font-semibold">{t.hero.badge}</span>
@@ -645,15 +965,16 @@ export default function KnightsLanding() {
             </p>
 
             <div className="flex items-center justify-center pt-2 sm:pt-4">
-              <a href="https://knightsweb.gitbook.io/knights-whitepaper" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-6 sm:px-10 py-4 sm:py-6 text-sm sm:text-lg shadow-xl shadow-primary/30">
-                  <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  {t.hero.whitepaper}
-                </Button>
-              </a>
+              <Button
+                size="lg"
+                onClick={() => setWhitepaperOpen(true)}
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-6 sm:px-10 py-4 sm:py-6 text-sm sm:text-lg shadow-xl shadow-primary/30"
+              >
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                {t.hero.whitepaper}
+              </Button>
             </div>
 
-            {/* Stats */}
             <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 md:gap-16 pt-8 sm:pt-10">
               {[
                 { value: "1B", label: t.hero.totalSupply },
@@ -684,36 +1005,32 @@ export default function KnightsLanding() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
               <span className="text-primary font-semibold text-xs sm:text-sm">{t.about.badge}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground" suppressHydrationWarning>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" suppressHydrationWarning>
               {lang === "en" ? (
-                <>
-                  Building a <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> On-Chain Economic System
-                </>
+                <>Building a <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> On-Chain Economic System</>
               ) : (
-                <>
-                  构建链上<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>经济系统
-                </>
+                <>构建链上<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>经济系统</>
               )}
             </h2>
-            <p className="text-foreground/70 leading-relaxed text-lg mt-4 max-w-3xl mx-auto">
+            <p className="text-foreground/70 leading-relaxed text-lg max-w-3xl mx-auto">
               {t.about.desc}
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
-            <GlowingBorder>
-              <div className="p-5 rounded-xl bg-card border border-primary/20">
-                <TrendingUp className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                <h3 className="font-semibold mb-1 text-foreground">{t.about.flywheel}</h3>
-                <p className="text-sm text-foreground/60">{t.about.flywheelDesc}</p>
-              </div>
-            </GlowingBorder>
-            <GlowingBorder>
-              <div className="p-5 rounded-xl bg-card border border-primary/20">
-                <Shield className="w-8 h-8 text-primary mb-3 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                <h3 className="font-semibold mb-1 text-foreground">{t.about.fair}</h3>
-                <p className="text-sm text-foreground/60">{t.about.fairDesc}</p>
-              </div>
-            </GlowingBorder>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+            {[
+              { icon: TrendingUp, title: t.about.flywheel, desc: t.about.flywheelDesc },
+              { icon: Shield, title: t.about.fair, desc: t.about.fairDesc },
+              { icon: Bot, title: t.about.quant, desc: t.about.quantDesc },
+              { icon: Users, title: t.about.network, desc: t.about.networkDesc },
+            ].map((item, index) => (
+              <GlowingBorder key={index}>
+                <div className="p-5 rounded-xl bg-card border border-primary/20 text-center">
+                  <item.icon className="w-8 h-8 text-primary mb-3 mx-auto drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                  <h3 className="font-semibold mb-1 text-foreground">{item.title}</h3>
+                  <p className="text-sm text-foreground/60">{item.desc}</p>
+                </div>
+              </GlowingBorder>
+            ))}
           </div>
           <div className="relative max-w-3xl mx-auto">
             <TerminalBlock lang={lang} />
@@ -728,25 +1045,21 @@ export default function KnightsLanding() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
               <span className="text-primary font-semibold text-xs sm:text-sm">{t.mechanism.badge}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
-              <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">3%</span> {t.mechanism.title.replace("3% ", "")}
-            </h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
-              {t.mechanism.desc}
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">{t.mechanism.title}</h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">{t.mechanism.desc}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {[
               {
                 icon: Coins,
-                percentage: "70%",
+                percentage: t.mechanism.dividends.percent,
                 title: t.mechanism.dividends.title,
                 features: t.mechanism.dividends.features,
               },
               {
                 icon: TrendingUp,
-                percentage: "30%",
+                percentage: t.mechanism.liquidity.percent,
                 title: t.mechanism.liquidity.title,
                 features: t.mechanism.liquidity.features,
               },
@@ -773,37 +1086,72 @@ export default function KnightsLanding() {
         </div>
       </section>
 
-      {/* Flywheel Section */}
-      <section className="relative py-16 sm:py-24 lg:py-32">
+      {/* AI Quantitative Section */}
+      <section id="ai" className="relative py-16 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 mb-4">
-              <span className="text-primary font-semibold text-xs sm:text-sm">{t.flywheel.badge}</span>
+              <span className="text-primary font-semibold text-xs sm:text-sm">{t.ai.badge}</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">{t.ai.title}</h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">{t.ai.desc}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
+            {t.ai.features.map((item, index) => (
+              <GlowingBorder key={index}>
+                <div className="p-5 rounded-xl bg-card border border-primary/20 text-center">
+                  <div className="text-3xl font-bold text-primary mb-2 drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">{item.title}</div>
+                  <p className="text-sm text-foreground/60">{item.desc}</p>
+                </div>
+              </GlowingBorder>
+            ))}
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <GlowingBorder>
+              <div className="p-6 rounded-xl bg-card border border-primary/20 text-center">
+                <Bot className="w-10 h-10 text-primary mx-auto mb-4 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                <p className="text-foreground/80">{t.ai.integration}</p>
+              </div>
+            </GlowingBorder>
+          </div>
+        </div>
+      </section>
+
+      {/* Flywheel Section */}
+      <section className="relative py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <FlywheelDiagram />
             </div>
             <div className="order-1 lg:order-2 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30">
-                <span className="text-primary text-xs font-semibold">{t.flywheel.badge}</span>
+                <span className="text-primary font-semibold text-xs sm:text-sm">{t.flywheel.badge}</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground" suppressHydrationWarning>
                 {lang === "en" ? (
-                  <>
-                    Continuous <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> System
-                  </>
+                  <>Continuous <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">Self-Reinforcing</span> System</>
                 ) : (
-                  <>
-                    持续<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>系统
-                  </>
+                  <>持续<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">自我强化</span>系统</>
                 )}
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {t.flywheel.steps.map((step, index) => (
-                  <div key={index} className="flex items-center gap-4 group">
-                    <div className="w-12 h-12 rounded-full bg-primary/15 border border-primary/35 flex items-center justify-center text-primary font-bold shadow-lg shadow-primary/25 group-hover:shadow-primary/40 group-hover:bg-primary/20 transition-all">
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold text-sm">
                       {index + 1}
                     </div>
-                    <span className="text-foreground text-lg">{step}</span>
+                    <span className="text-foreground/80">{step}</span>
+                    {index < t.flywheel.steps.length - 1 && (
+                      <span className="text-primary">→</span>
+                    )}
                   </div>
                 ))}
+              </div>
+              <div className="p-4 rounded-xl bg-primary/10 border border-primary/30 mt-6">
+                <p className="text-primary font-mono text-sm text-center">{t.flywheel.formula}</p>
               </div>
             </div>
           </div>
@@ -821,9 +1169,18 @@ export default function KnightsLanding() {
               <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">{lang === "en" ? "1 Billion" : "10 亿"}</span>{" "}
               {lang === "en" ? "Total Supply" : "总发行量"}
             </h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
-              {t.tokenomics.desc}
-            </p>
+            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">{t.tokenomics.desc}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+            {t.tokenomics.principles.map((item, index) => (
+              <GlowingBorder key={index}>
+                <div className="p-4 rounded-xl bg-card border border-primary/20 text-center">
+                  <h3 className="font-bold text-primary mb-1">{item.title}</h3>
+                  <p className="text-xs text-foreground/60">{item.desc}</p>
+                </div>
+              </GlowingBorder>
+            ))}
           </div>
 
           <div className="max-w-2xl mx-auto px-4 sm:px-0">
@@ -835,7 +1192,7 @@ export default function KnightsLanding() {
                   </div>
                   <div className="flex-1 w-full">
                     <h3 className="text-xl sm:text-2xl font-bold text-foreground">{t.tokenomics.communityCore}</h3>
-                    <div className="text-base sm:text-lg text-primary font-bold whitespace-pre-line leading-relaxed">
+                    <div className="text-base sm:text-lg text-primary font-bold">
                       {t.tokenomics.communitySeats.split('\n')[0]}
                     </div>
                     <p className="text-xs sm:text-sm text-primary/80 mt-2 break-all">
@@ -854,20 +1211,6 @@ export default function KnightsLanding() {
               </div>
             </GlowingBorder>
           </div>
-
-          <div className="mt-12 grid sm:grid-cols-3 gap-6">
-            {[
-              { icon: Shield, title: t.tokenomics.fairTitle, desc: t.tokenomics.fairDesc },
-              { icon: Zap, title: t.tokenomics.freeTitle, desc: t.tokenomics.freeDesc },
-              { icon: Users, title: t.tokenomics.consensusTitle, desc: t.tokenomics.consensusDesc },
-            ].map((item, index) => (
-              <div key={index} className="text-center p-6 rounded-xl bg-card/60 border border-primary/15 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/15 transition-all">
-                <item.icon className="w-10 h-10 text-primary mx-auto mb-4 drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                <h3 className="font-semibold mb-2 text-foreground">{item.title}</h3>
-                <p className="text-sm text-foreground/60">{item.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -880,18 +1223,12 @@ export default function KnightsLanding() {
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground" suppressHydrationWarning>
               {lang === "en" ? (
-                <>
-                  Join the <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">KNIGHTS</span> Community
-                </>
+                <>Join the <span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">KNIGHTS</span> Community</>
               ) : (
-                <>
-                  加入<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">骑士</span>社区
-                </>
+                <>加入<span className="text-primary drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]">骑士</span>社区</>
               )}
             </h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
-              {t.community.desc}
-            </p>
+            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">{t.community.desc}</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -899,23 +1236,29 @@ export default function KnightsLanding() {
               { icon: Twitter, label: "Twitter", href: "https://x.com/knightstoken", desc: t.community.twitter },
               { icon: Send, label: "Telegram", href: "https://t.me/knightsfour", desc: t.community.telegram },
               { icon: Mail, label: "Email", href: "mailto:flybabyaile@gmail.com", desc: t.community.email },
-              { icon: FileText, label: "Whitepaper", href: "https://knightsweb.gitbook.io/knights-whitepaper", desc: t.community.whitepaper },
+              { icon: FileText, label: lang === "en" ? "Whitepaper" : "白皮书", onClick: () => setWhitepaperOpen(true), desc: t.community.whitepaper },
             ].map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <GlowingBorder>
-                  <div className="p-6 rounded-xl bg-card border border-primary/20 text-center transition-all group-hover:scale-[1.02]">
-                    <item.icon className="w-10 h-10 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
-                    <h3 className="font-semibold mb-1 text-foreground">{item.label}</h3>
-                    <p className="text-sm text-foreground/60">{item.desc}</p>
-                  </div>
-                </GlowingBorder>
-              </a>
+              item.onClick ? (
+                <button key={index} onClick={item.onClick} className="group text-left">
+                  <GlowingBorder>
+                    <div className="p-6 rounded-xl bg-card border border-primary/20 text-center transition-all group-hover:scale-[1.02]">
+                      <item.icon className="w-10 h-10 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                      <h3 className="font-semibold mb-1 text-foreground">{item.label}</h3>
+                      <p className="text-sm text-foreground/60">{item.desc}</p>
+                    </div>
+                  </GlowingBorder>
+                </button>
+              ) : (
+                <a key={index} href={item.href} target="_blank" rel="noopener noreferrer" className="group">
+                  <GlowingBorder>
+                    <div className="p-6 rounded-xl bg-card border border-primary/20 text-center transition-all group-hover:scale-[1.02]">
+                      <item.icon className="w-10 h-10 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]" />
+                      <h3 className="font-semibold mb-1 text-foreground">{item.label}</h3>
+                      <p className="text-sm text-foreground/60">{item.desc}</p>
+                    </div>
+                  </GlowingBorder>
+                </a>
+              )
             ))}
           </div>
         </div>
@@ -927,24 +1270,20 @@ export default function KnightsLanding() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground" suppressHydrationWarning>
             {lang === "en" ? (
-              <>
-                Ready to Join <span className="text-primary drop-shadow-[0_0_30px_rgba(255,215,0,0.7)]">KNIGHTS</span>?
-              </>
+              <>Ready to Join <span className="text-primary drop-shadow-[0_0_30px_rgba(255,215,0,0.7)]">KNIGHTS</span>?</>
             ) : (
-              <>
-                准备好加入<span className="text-primary drop-shadow-[0_0_30px_rgba(255,215,0,0.7)]">骑士</span>了吗？
-              </>
+              <>准备好加入<span className="text-primary drop-shadow-[0_0_30px_rgba(255,215,0,0.7)]">骑士</span>了吗？</>
             )}
           </h2>
-          <p className="text-foreground/70 mb-8 sm:mb-10 max-w-2xl mx-auto text-base sm:text-lg">
-            {t.cta.desc}
-          </p>
-          <a href="https://knightsweb.gitbook.io/knights-whitepaper" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-6 sm:px-10 py-4 sm:py-6 text-sm sm:text-lg shadow-xl shadow-primary/30">
-              <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              {t.hero.whitepaper}
-            </Button>
-          </a>
+          <p className="text-foreground/70 mb-8 sm:mb-10 max-w-2xl mx-auto text-base sm:text-lg">{t.cta.desc}</p>
+          <Button
+            size="lg"
+            onClick={() => setWhitepaperOpen(true)}
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-6 sm:px-10 py-4 sm:py-6 text-sm sm:text-lg shadow-xl shadow-primary/30"
+          >
+            <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            {t.hero.whitepaper}
+          </Button>
         </div>
       </section>
 
@@ -953,7 +1292,7 @@ export default function KnightsLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <span className="text-xl font-bold text-primary drop-shadow-[0_0_12px_rgba(255,215,0,0.6)]">KNIGHTS</span>
+              <span className="text-xl font-bold text-primary drop-shadow-[0_0_12px_rgba(255,215,0,0.6)]">{t.footer.logoText}</span>
             </button>
 
             <div className="flex items-center gap-6">
@@ -968,11 +1307,12 @@ export default function KnightsLanding() {
                   <link.icon className="w-5 h-5" />
                 </a>
               ))}
+              <button onClick={() => setWhitepaperOpen(true)} className="text-foreground/60 hover:text-primary transition-colors">
+                <FileText className="w-5 h-5" />
+              </button>
             </div>
 
-            <p className="text-foreground/50 text-sm">
-              {t.footer.rights}
-            </p>
+            <p className="text-foreground/50 text-sm">{t.footer.rights}</p>
           </div>
         </div>
       </footer>
