@@ -23,7 +23,7 @@ const translations = {
       desc: "KNIGHTS integrates AI quantitative capabilities, on-chain liquidity, and automated economic models into an asset management protocol that delivers real-world trading returns.",
       whitepaper: "Read Whitepaper",
       totalSupply: "1 Billion",
-      tax: "3% Tax",
+      tax: "1% Tax",
       transparent: "100% Circulation",
       learnMore: "Learn More",
     },
@@ -42,8 +42,8 @@ const translations = {
     },
     mechanism: {
       badge: "THREE-ELEMENT DISTRIBUTION MODEL",
-      title: "3% Transaction Tax Allocation",
-      desc: "Every KNIGHTS transaction collects 3% fee with automatic on-chain redistribution",
+      title: "1% Transaction Tax Allocation",
+      desc: "Every KNIGHTS transaction collects 1% fee with automatic on-chain redistribution",
       dividends: {
         title: "BNB Dividend Pool",
         percent: "70%",
@@ -165,7 +165,7 @@ const translations = {
       desc: "骑士整合 AI 量化能力、链上流动性和自动化经济模型，构建传递真实世界交易收益的资产管理协议。",
       whitepaper: "阅读白皮书",
       totalSupply: "10 亿",
-      tax: "3% 税费",
+      tax: "1% 税费",
       transparent: "100% 流通",
       learnMore: "了解更多",
     },
@@ -184,8 +184,8 @@ const translations = {
     },
     mechanism: {
       badge: "三元分配模型",
-      title: "3% 交易税分配",
-      desc: "每笔骑士交易收取 3% 手续费，自动完成链上分配",
+      title: "1% 交易税分配",
+      desc: "每笔骑士交易收取 1% 手续费，自动完成链上分配",
       dividends: {
         title: "BNB 分红池",
         percent: "70%",
@@ -356,8 +356,8 @@ Model Comparison:
 | Supply Structure | Inflation or Fixed | Continuous Deflation |`
       },
       {
-        title: "3. Core Mechanism: 3% Tax Three-Element Distribution",
-        content: `Every KNIGHTS transaction collects 3% fee, automatically distributed on-chain.
+        title: "3. Core Mechanism: 1% Tax Three-Element Distribution",
+        content: `Every KNIGHTS transaction collects 1% fee, automatically distributed on-chain.
 
 Distribution Structure:
 | Direction | Ratio | Function |
@@ -519,7 +519,7 @@ Value = Quantitative Yield Capability + Dividend Capability + Scarcity + Market 
         content: `| Item | Parameter |
 | Token Name | KNIGHTS |
 | Total Supply | 1 Billion |
-| Transaction Tax | 3% |
+| Transaction Tax | 1% |
 | BNB Dividends | 70% |
 | LP Enhancement | 30% |
 | Dividend Threshold | ≥100,000 KNIGHTS |
@@ -616,8 +616,8 @@ KNIGHTS 由多家长期从事黄金量化交易（XAU/USD）的独立量化团�
 | 供应结构 | 通胀或固定 | 持续通缩 |`
       },
       {
-        title: "三、核心机制：3% 交易税三元分配模型",
-        content: `每一笔 KNIGHTS 交易收取 3% 手续费，并自动完成链上分配。
+        title: "三、核心机制：1% 交易税三元分配模型",
+        content: `每一笔 KNIGHTS 交易收取 1% 手续费，并自动完成链上分配。
 
 分配结构：
 | 分配方向 | 占比 | 功能 |
@@ -781,7 +781,7 @@ KNIGHTS 四重属性：
         content: `| 项目 | 参数 |
 | 代币名称 | KNIGHTS |
 | 总供应量 | 10亿 |
-| 交易税 | 3% |
+| 交易税 | 1% |
 | BNB 分红 | 70% |
 | LP 增强 | 30% |
 | 分红门槛 | ≥100,000 KNIGHTS |
@@ -1043,7 +1043,7 @@ function TerminalBlock({ lang }: { lang: Lang }) {
   const codeLines = [
     { text: "$ knights init --network bsc", type: "command" },
     { text: `> ${t.init}`, type: "info" },
-    { text: `> ${t.taxRate}: 3%`, type: "info" },
+    { text: `> ${t.taxRate}: 1%`, type: "info" },
     { text: `> ${t.dividendPool}: 70%`, type: "info" },
     { text: `> ${t.liquidityPool}: 30%`, type: "info" },
     { text: `> ${t.totalSupply}: 1,000,000,000 KNIGHTS`, type: "info" },
@@ -1326,7 +1326,7 @@ export default function KnightsLanding() {
             <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 md:gap-16 pt-8 sm:pt-10">
               {[
                 { value: "1B", label: t.hero.totalSupply },
-                { value: "3%", label: t.hero.tax },
+                { value: "1%", label: t.hero.tax },
                 { value: "100%", label: t.hero.transparent },
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
