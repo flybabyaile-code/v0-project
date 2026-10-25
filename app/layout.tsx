@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'KNIGHTS - BSC Meme Value Model',
-  description: 'KNIGHTS is a blockchain token system built on dividend support, deflation model, and community-driven growth engine.',
+  title: 'Vercel Project',
+  description: 'A Vercel project.',
   generator: 'v0.app',
   icons: {
     icon: [
